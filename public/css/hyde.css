@@ -31,15 +31,15 @@
  * Update the foundational and global aspects of the page.
  */
 
-html {
+ html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   html {
     font-size: 16px;
   }
 }
-@media (min-width: 58em) {
+@media (min-width: 58rem) {
   html {
     font-size: 20px;
   }
@@ -59,13 +59,13 @@ html {
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: 27rem;
     text-align: left;
   }
 }
@@ -79,17 +79,16 @@ html {
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
   font-size: 3.25rem;
 }
 
 /* Sidebar nav */
 .sidebar-nav {
-  margin-bottom: 1rem;
+  padding-left: 0;
+  list-style: none;
 }
 .sidebar-nav-item {
   display: block;
-  line-height: 1.75;
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
@@ -105,7 +104,7 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;
@@ -126,7 +125,7 @@ a.sidebar-nav-item:focus {
   padding-bottom: 4rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   .content {
     max-width: 38rem;
     margin-left: 20rem;
@@ -134,7 +133,7 @@ a.sidebar-nav-item:focus {
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64rem) {
   .content {
     margin-left: 22rem;
     margin-right: 4rem;
@@ -148,7 +147,7 @@ a.sidebar-nav-item:focus {
  * Flip the orientation of the page by placing the `.sidebar` on the right.
  */
 
-@media (min-width: 48em) {
+@media (min-width: 48rem) {
   .layout-reverse .sidebar {
     left: auto;
     right: 0;
@@ -159,7 +158,7 @@ a.sidebar-nav-item:focus {
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 64rem) {
   .layout-reverse .content {
     margin-left: 4rem;
     margin-right: 22rem;
