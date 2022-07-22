@@ -405,7 +405,7 @@ a.pagination-item:hover {
 .column {
   float: left;
   width: 350px;
-  padding: 5px;
+  padding: 2px;
 }
 
 /* Clear floats after image containers */
