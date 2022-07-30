@@ -14,7 +14,7 @@
   
   <title>
     
-      Research &middot; Rishabh
+      Blog &middot; Rishabh
     
   </title>
 
@@ -58,7 +58,7 @@
         <a href="/">Home</a>
       </li>
 
-      <li class="sidebar-nav-item active">
+      <li class="sidebar-nav-item">
         <a href="/research/">Research</a>
      </li>
         
@@ -73,7 +73,7 @@
           <a href="/cv/">CV / Resume</a>
        </li>
 
-       <li class="sidebar-nav-item">
+       <li class="sidebar-nav-item active">
         <a href="/blog/">Blog</a>
       </li>
 
@@ -94,55 +94,53 @@
   </div>
 </div>
 
-    <div class="content container">
-        <div class="page">
-    <h1 class="page-title">Research</h1>
+<div class="content container">
+    <div class="page">
+<h2 class="page-title">Type Ia Supernovae and their progenitor mechanisms</h2>
+<span class="post-date">Dec 28, 2021</span>
 
-<p>My research focuses on stellar physics and stellar evolution. Mostly, I am developing 
-   magnetohydrodynamics(MHD) solvers to build numerical solutions for SN Ia. MHD plays an
-   important role in the long term evolution of white dwarf mergers and can lead us to better
-   understand their progenitor systems.
+<p>Type Ia supernovae (SNe Ia) are explosions of white dwarf (WD) stars in interacting binaries. 
+  A white dwarf is not going to undergo an explosion by itself. It needs a trigger.
+  The trigger is provided by another companion which can be a wide range of objects including a white dwarf,
+  a helium rich star or a red giant star. Hence, SN Ia should always occur in a binary system.
+
+  <p><figure>
+    <img src="/assets/kepler_SNR.jpeg" alt="Kepler Supernova remenant" style ="width: 600px; height: auto; "/></p>
+    <figcaption><em>Kepler's Supernova, SN1604. It was a Type Ia Supernova that occurred in the Milky Way, 
+      in the constellation Ophiuchus. </em>(Image from nasa.gov)</figcaption>
+  </figure>
+  There are several explosion mechanism proposed that try to address the longstanding mystery 
+  involving the occurence of SN Ia in the universe. I discuss some of these brielfy here...
+  <a href="/blog/Progenitor.html"><em>Read more</em></a>
 </p>
 
-<p>My current effort involves a direct comparision of the fully MHD solution of a white dwarf 
-   merger versus that obtained for an alpha disk hydrodynamic treatment. Much of the current 
-   literature is still based upon the latter, in which the differential rotation in the tidally
-   disrupted disk leads to a hot inflated envelope in the merger, which expands
-   dramatically to non-degenerate stellar radii, in strong contrast to the MHD merger which remains
-   compact.
 
+
+<p style="margin-top:50px ;">
 </p>
 
-<div class="row">
-  <div class="column">
-    <video width=320" height="auto"controls >
-      <source src="/assets/mhd.mov" type="video/mp4">
-   </video>
-  </div>
-  <div class="column">
-    <img src="/assets/mhd_dens.jpeg" alt="Density slice of a MHD merger" style ="width: 320px; height: auto;"/>
-  </div>
-  <figcaption style="font-size:12px;"><em>Evolution of a White dwarf merger. The simulation was 
-    done using the unsplit staggered mesh MHD solver in FLASH. The movie shows Beta (ratio of gas pressure to magnetic pressure) 
-    varying with time. The image is a density slice plot with resolution of (256)^2 cells at 1050 sec after the explosion. 
-  </em></figcaption>
+<h2 class="page-title">Evolution of surviving companions in Type Ia Supernova Remenants</h2>
+<span class="post-date">March 31, 2022</span>
+
+<p> 
+  It has been a long search for a companion that can survive a supernova impact. And the search is 
+  still going on. These surviving companion objects are extremely hard to detect but with new data coming 
+  from the GAIA mission may provide some hope to find these objects...
+  <a href="/blog/companion.html"><em>Read more</em></a>
+</p>
+  
 </div>
 
-<p></p>
+<div class="pagination">
+  
+  <span class="pagination-item older" >Older</span>
 
-<p> I earned my bachelor's in Aerospace Engineering from 
-    <a href = "https://www.upes.ac.in/">UPES </a> where my advisor was 
-    <a href = "https://drguven.com/">Ugur Guven. </a>
-    My undergraduate thesis concerned the orbital 
-    trajectories of objects under influence of a gravitational source. I built on transfer
-    algorithms like Hohmann and modified them using RK4 scheme for interpolation. I also extended the solver to 
-    include effects like orbital decay, albedo and third body perturbations. I am particularly proud of
-    my work because it went on to influence a bunch of other computer science students who 
-    then added elements of neural network in the solver and developed an orbital collision avoidance system.
-</p>
+
+  <a class="pagination-item newer" href="/blog/index.html">Newer</a>
+
 </div>
 
-        </div>
+    </div>
 
-    </body>
+  </body>
 </html>
