@@ -125,22 +125,56 @@
 
 <p> 
   Deep Neural Network (DNN) is a multi layer network that roughly works the same way as a 
-  human brain. It has neurons, activators, links and weights...
-  <a href="/blog/dnn.html"><em>Read more</em></a>
+  human brain. It has neurons, activators, links and weights. There is an input node layer, a hidden 
+  node layer and and an output node layer. All these are connected via some links and these links 
+  have weights attached to them. The link weights can be updated by training the model which can be 
+  done in two ways, supervised learning and unsupervised learning. The former is more simple and more
+  reliable as it is based on teaching a model what exactly are they operating on. It is just like
+  a toddler who is interacting with the environment and the parents are constantly teaching the kid
+  how to interact and interpret. 
+</p>
+
+<h3>
+    Neural Network for recognising numbers
+</h3>
+
+<p>
+    I made this basic model using <a href="https://pjreddie.com/projects/mnist-in-csv/">MNIST dataset. </a> 
+    A picture of a handwritten number is composed of pixels (28x28). These pixels have some values
+    associated with them. For simplicity, a greyed out picture is taken in which each pixel value is 
+    between 0 (Black) to 255 (white). These are then stored in a .csv file, and this is data that is in 
+    MNSIT.
+</p>
+
+<p>
+    We can easily use this data set to train our neural network. You can find the code 
+    <a href="https://github.com/rishabh01solanki/ML_numbers">here</a>. Once the network is trained,
+    we can test it by comparing a new input image. You will be surprised how good the network performs.
+</p>
+
+<h3>
+    Backquerry, "Inside the mind of a Neural Network"
+</h3>
+
+<p>
+    Once the network is trained meaning, its links weights are set, we can backquerry the network. 
+    We can input our querry at the output nodes and see what result it generates at the input layer.
+    The images of '2' and '9' as shown were obtained in this fashion. This is what a neural 
+    network thinks how a 'Zero' looks like.
 </p>
 
 
-  
-</div>
+
 
 <div class="pagination">
   
-  <a class="pagination-item older" href="/blog/page1.html">Older</a>
-
-
-  <span class="pagination-item newer">Newer</span>
-
+    <a href="/blog/index.html">More blogs</a>
+    
+  
 </div>
+  
+</div>
+
 
     </div>
 
