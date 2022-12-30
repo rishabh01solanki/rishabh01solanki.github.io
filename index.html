@@ -107,7 +107,7 @@
 
 <style>
   .fade-in {
-    animation: fade-in 3s;
+    animation: fade-in 5s;
   }
 
   @keyframes fade-in {
@@ -119,9 +119,35 @@
     }
   }
 </style>
-<p class="fade-in">
+
+<style>
+.slide-in {
+  animation: slideIn 3s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+</style>
+
+
+
+
+
+
+<p class="slide-in">
   <img src="/assets/Rishabh.jpeg" style="width:200px; height: auto; float:left; margin:0.5em 1em 0 0;" alt="Photo of Rishabh" />
 </p>
+
+
 
 <p class="fade-in">I am a Master's student at University of Massachusetts Dartmouth.</p>
 
