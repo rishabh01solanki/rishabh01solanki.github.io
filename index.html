@@ -163,9 +163,19 @@
 
 <p class="fade-in">You can get in touch with me via <a href="mailto:rsolanki@umassd.edu" class="fade-in">email</a>.</p>
 
-<audio autoplay>
+
+<audio id="myAudio">
   <source src="assets/Latch.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+  var audio = document.getElementById("myAudio");
+
+  setTimeout(function() {
+    audio.volume = 0.4;
+    audio.play();
+  }, 2970); // 5000 milliseconds = 5 seconds
+</script>
 
 
   </body>
