@@ -108,133 +108,22 @@
 
 
 
-<div class="content container">
-
-  <canvas id="comet-canvas"style="position: absolute;"></canvas>
-  
-
-  
-
-<audio id="myAudio">
-  <source src="assets/Latch.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  var audio = document.getElementById("myAudio");
-
-  setTimeout(function() {
-    audio.volume = 0.6;
-    audio.play();
-  }, 2970); // 5000 milliseconds = 5 seconds
-</script>
-
- <!-- Add the JavaScript code -->
- <script>
-   const canvas = document.getElementById('comet-canvas');
-
-   const ctx = canvas.getContext('2d');
-
-   // Get the container element and the canvas element
-const container = document.querySelector('.content.container');
-
-
-// Set the initial size of the canvas element to the size of the container element
-canvas.width = container.offsetWidth;
-canvas.height = container.offsetHeight;
-
-// Set up a function to update the size of the canvas element
-function updateCanvasSize() {
-  // Get the new width and height of the container element
-  const containerWidth = container.offsetWidth;
-  const containerHeight = container.offsetHeight;
-
-  // Set the width and height of the canvas element to the new values
-  canvas.width = containerWidth;
-  canvas.height = containerHeight;
-}
-
-// Add an event listener to the window object to detect when the size of the window changes
-window.addEventListener('resize', updateCanvasSize);
-
-
-  const G = 1.2;  // Gravitational constant
-
-// Set up the masses and initial positions of the celestial bodies
-const mass1 = 5;
-const mass2 = 1;
-let x1 = canvas.width/2.84  
-let y1 = canvas.height/4
-let x2 = canvas.width/2 + 50
-let y2 = canvas.height/2 - 70
-
-// Set up the initial velocities of the celestial bodies
-let vx1 = Math.random() * 0.01;
-let vy1 = Math.random() * 0.01;
-let vx2 = Math.random() * 0.2 - 0.1;
-let vy2 = Math.random() * 0.2;
-
-// Set the size of the celestial bodies
-const radius1 = 5;
-const radius2 = 3;
-
-// Animate the movement of the celestial bodies
-function animate() {
-  // Clear the canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Calculate the gravitational force between the two celestial bodies
-  const rx = x1 - x2;
-  const ry = y1 - y2;
-  const r = Math.sqrt(rx*rx + ry*ry);
-  const f = G * mass1 * mass2 / (r*r);
-
-  // Calculate the acceleration of each celestial body due to the gravitational force
-  const ax1 = -f * rx / r / mass1;
-  const ay1 = -f * ry / r / mass1;
-  const ax2 = f * rx / r / mass2;
-  const ay2 = f * ry / r / mass2;
-
-  // Update the velocities of the celestial bodies using the acceleration
-  vx1 += ax1;
-  vy1 += ay1;
-  vx2 += ax2;
-  vy2 += ay2;
-
-  // Update the positions of the celestial bodies using the velocities
-  x1 += vx1;
-  y1 += vy1;
-  x2 += vx2;
-  y2 += vy2;
-
-  // Draw the celestial bodies at their new positions
-  ctx.beginPath();
-  ctx.arc(x1, y1, radius1, 0, 2 * Math.PI);
-  ctx.fillStyle = 'black';
-  ctx.fill();
-
-  ctx.beginPath();
-  ctx.arc(x2, y2, radius2, 0, 2 * Math.PI);
-  ctx.fillStyle = 'blue';
-  ctx.fill();
-
-  // Animate the movement again after a short delay
-  setTimeout(animate, 1000 / 60);  // 60 FPS
-}
-
-animate();
-
-
-
-
- </script>
-
-
+<div class="content container">  
       <h1 id="Rishabh-Solanki">Rishabh Solanki</h1>
 
-
+      <audio id="myAudio">
+        <source src="assets/Latch.mp3" type="audio/mpeg">
+      </audio>
+      
+      <script>
+        var audio = document.getElementById("myAudio");
+      
+        setTimeout(function() {
+          audio.volume = 0.6;
+          audio.play();
+        }, 2970); // 5000 milliseconds = 5 seconds
+      </script>
      
-     
-
 <style>
   .fade-in {
     animation: fade-in 5s;
@@ -288,7 +177,8 @@ animate();
 <p class="fade-in">You can get in touch with me via <a href="mailto:rsolanki@umassd.edu" class="fade-in">email</a>.</p>
 
 
-  </body>
+  </div>
+    </body>
 
 </audio>
 
