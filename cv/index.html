@@ -25,6 +25,11 @@
   <link rel="stylesheet" href="/public/css/fade_in.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
+
+  <!---JS-->
+
+
+
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
                                  <link rel="shortcut icon" href="/public/favicon.ico">
@@ -91,15 +96,11 @@
    
     </ul>
 
-    <p>Built with
-      <a href="http://jekyllrb.com">Jekyll</a> &amp;
-      <a href="http://hyde.getpoole.com/">Hyde</a>
-      <br>
+    <p><br>
       &copy; 2023. All rights reserved.
     </p>
   </div>
 </div>
-
 
 <div class="content container">
   <div class="page">
@@ -118,6 +119,38 @@
 </dl>
 
 
+<style>
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.skill-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.skill-bar {
+  flex: 3;
+  height: 15px;
+  background-color: #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+
+.skill-percent {
+  height: 100%;
+  background-color: #3498db;
+  border-radius: 5px;
+}
+
+.skill-percentage {
+  flex: 1;
+  text-align: right;
+}
+</style>
+
 <h3>Skills</h3>
     <ul>
       <li>Independent and collaborative research</li>
@@ -125,12 +158,44 @@
       <li>Machine learning</li>
       <li>Predictive modeling</li>
       <li>Written and verbal technical communication</li>
-      <li>Python, Java, Fortran</li>
       <li>Git, Linux, High Performance Computing</li>
-
     </ul> 
+
+
+<div class="skill">
+  <div class="skill-name">Python</div>
+  <div class="skill-bar">
+    <div class="skill-percent" style="width: 83%;"></div>
+  </div>
+  <div class="skill-percentage"></div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">Java</div>
+  <div class="skill-bar">
+    <div class="skill-percent" style="width: 75%;"></div>
+  </div>
+  <div class="skill-percentage"></div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">Fortran</div>
+  <div class="skill-bar">
+    <div class="skill-percent" style="width: 79%;"></div>
+  </div>
+  <div class="skill-percentage"></div>
+</div>
+
+<div class="skill">
+  <div class="skill-name">SQL</div>
+  <div class="skill-bar">
+    <div class="skill-percent" style="width: 60%;"></div>
+  </div>
+  <div class="skill-percentage"></div>
+</div>
+
     
-    <h3>Experience</h3>
+    <h3 style="margin-top: 40px;">Experience</h3>
     <h5>UMass Dartmouth / Graduate Researcher</h5>
     <p style="font-size: small;">Sep 2021 - present, USA</p>
     <ul>
