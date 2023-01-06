@@ -28,8 +28,6 @@
 
   <!---JS-->
 
-
-
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
                                  <link rel="shortcut icon" href="/public/favicon.ico">
@@ -143,12 +141,15 @@
   height: 100%;
   background-color: #3498db;
   border-radius: 5px;
+  transition: width 2s ease;  
 }
 
 .skill-percentage {
   flex: 1;
   text-align: right;
 }
+
+
 </style>
 
 <h3>Skills</h3>
@@ -162,18 +163,18 @@
     </ul> 
 
 
-<div class="skill">
-  <div class="skill-name">Python</div>
-  <div class="skill-bar">
-    <div class="skill-percent" style="width: 83%;"></div>
-  </div>
-  <div class="skill-percentage"></div>
-</div>
+    <div class="skill">
+      <div class="skill-name">Python</div>
+      <div class="skill-bar">
+        <div class="skill-percent" style="width: 0%" data-percent="83"></div>
+      </div>
+      <div class="skill-percentage"></div>
+    </div>
 
 <div class="skill">
   <div class="skill-name">Java</div>
   <div class="skill-bar">
-    <div class="skill-percent" style="width: 75%;"></div>
+    <div class="skill-percent" style="width: 0%" data-percent="73"></div>
   </div>
   <div class="skill-percentage"></div>
 </div>
@@ -181,7 +182,7 @@
 <div class="skill">
   <div class="skill-name">Fortran</div>
   <div class="skill-bar">
-    <div class="skill-percent" style="width: 79%;"></div>
+    <div class="skill-percent" style="width: 0%" data-percent="79"></div>
   </div>
   <div class="skill-percentage"></div>
 </div>
@@ -189,10 +190,35 @@
 <div class="skill">
   <div class="skill-name">SQL</div>
   <div class="skill-bar">
-    <div class="skill-percent" style="width: 60%;"></div>
+    <div class="skill-percent" style="width: 0%" data-percent="66"></div>
   </div>
   <div class="skill-percentage"></div>
 </div>
+
+    <script>
+ 
+      const skillElements = document.querySelectorAll('.skill');
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const skillPercentElements = entry.target.querySelectorAll('.skill-percent');
+
+            skillPercentElements.forEach(el => {
+              const percent = el.getAttribute('data-percent');
+              el.style.width = percent + '%';
+            });
+
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      skillElements.forEach(el => {
+        observer.observe(el);
+      });
+    </script>
+
 
     
     <h3 style="margin-top: 40px;">Experience</h3>
@@ -228,4 +254,6 @@ models.</li>
   </div>
 
   </body>
+
+
 </html>
