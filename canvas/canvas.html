@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <meta name="description" content="Homepage of Rishabh Solanki">
+  <meta name="keywords" content="Rishabh Solanki, Astrophysics, Astronomy, Physics">
+  <meta name="author" content="Rishabh Solanki">
+
+
+  
+  <title>
+    
+      Rishabh &middot; Homepage
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="/public/css/fade_in.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+
+  <!---JS-->
+  <script src="/javascript/type.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
+    
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- MathJax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    messageStyle: "none",
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+  </script>
+
+</head>
+
+
+
+  <body>
+
+    <div class="sidebar animated">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>Rishabh</h1>
+      <p class="lead">Stars and Stories</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item active">
+        <a href="/">Home</a>
+      </li>
+
+      <li class="sidebar-nav-item">
+        <a href="/research/">Research</a>
+     </li>
+        
+  
+       <li class="sidebar-nav-item">
+          <a href="/computing/">Computing</a>
+       </li>
+
+
+          
+       <li class="sidebar-nav-item">
+        <a href="/cv/">CV/Resume</a>
+       </li>
+
+       <li class="sidebar-nav-item">
+        <a href="/blog/">Blog</a>
+      </li>
+
+
+       <li class="sidebar-nav-item">
+          <a href="/teaching/">Teaching</a>
+       </li>
+
+       <li class="sidebar-nav-item">
+        <a href="/About me/">About Me</a>
+        </li>
+
+        <li class="sidebar-nav-item">
+            <a href="/canvas/canvas.html">Canvas</a>
+          </li>
+
+
+    </ul>
+
+    <p><br>
+      &copy; 2023. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+
+
+<div class="content container"> 
+     <p class = "fade-out"><em>Collisions are everywhere. Sometimes they are so small that they escape human imagination.
+        Yet, they are vital. Without them, we won't be here. Without them, there is no universe. 
+    </em></p> 
+
+    <audio id="myAudio">
+        <source src="/assets/chopin.mp3" type="audio/mpeg">
+      </audio>
+      
+      <script>
+        var audio = document.getElementById("myAudio");
+      
+        setTimeout(function() {
+          audio.volume = 0.7;
+          audio.play();
+          
+          // Add event listener to stop audio at end of file
+          audio.addEventListener("ended", function() {
+            audio.pause();
+          });
+        }, 0);
+      </script>
+      
+     
+
+         <canvas></canvas>
+         <script>
+           // JavaScript code goes here
+           // Initialize canvas
+           const canvas = document.querySelector('canvas');
+           const ctx = canvas.getContext('2d');
+           const contentContainer = document.querySelector('.content.container');
+           
+           const contentWidth = contentContainer.clientWidth;
+           const contentHeight = contentContainer.clientHeight;
+           canvas.width = contentWidth * 1.1
+           canvas.height = contentHeight 
+
+     
+           // Define particle class
+           class Particle {
+             constructor(x, y, mass) {
+               this.x = x;
+               this.y = y;
+               this.mass = mass;
+               this.vx = Math.random() * 10 - 5; // Random velocity between -5 and 5
+               this.vy = Math.random() * 10 - 5; // Random velocity between -5 and 5
+             }
+     
+             // Update particle position based on gravity
+             updatePosition(particles, dt) {
+               let ax = 0;
+               let ay = 0;
+     
+               for (let i = 0; i < particles.length; i++) {
+                 if (particles[i] !== this) {
+                   const dx = particles[i].x - this.x;
+                   const dy = particles[i].y - this.y;
+                   const distSq = dx*dx + dy*dy;
+                   const dist = Math.sqrt(distSq);
+                   const force = (this.mass * particles[i].mass) / distSq;
+     
+                   ax += force * dx / dist;
+                   ay += force * dy / dist;
+                 }
+               }
+     
+               this.vx += ax * dt;
+               this.vy += ay * dt;
+               this.x += this.vx * dt;
+               this.y += this.vy * dt;
+             }
+     
+             // Draw particle on canvas
+             draw() {
+               ctx.beginPath();
+               ctx.arc(this.x, this.y, Math.sqrt(this.mass), 0, 2*Math.PI);
+               ctx.fill();
+             }
+           }
+     
+                // Create two particles with random positions
+            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 100);
+            const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 50);
+            const particles = [particle1, particle2];
+     
+
+            let lastParticleTime = performance.now();
+            const particleInterval = 7000; // New particle every 5 seconds
+           
+            // Define animation loop
+           function animate() {
+             // Clear canvas
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+     
+              // Check if it's time to create a new particle
+                const currentTime = performance.now();
+                if (currentTime - lastParticleTime > particleInterval) {
+                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 100);
+                particles.push(newParticle);
+                lastParticleTime = currentTime;
+                }
+
+             // Update particle positions
+             const dt = 0.1;
+             particles.forEach(p => p.updatePosition(particles, dt));
+     
+             // Draw particles
+             particles.forEach(p => p.draw());
+     
+             // Request next animation frame
+             requestAnimationFrame(animate);
+           }
+     
+           // Start animation loop
+           animate();
+         </script>
+    
+     
+
+
+  </div>
+</body>
+
+</html>

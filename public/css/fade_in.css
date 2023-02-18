@@ -12,6 +12,21 @@
     }
   }
 
+  .fade-out {
+    animation: fadeOut 15s forwards;
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+
 
 
 .slide-in {
@@ -26,5 +41,20 @@
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+.slide-out {
+  animation: slideOut 2.3s ease-in-out;
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
