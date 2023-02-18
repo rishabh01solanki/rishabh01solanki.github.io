@@ -157,7 +157,7 @@
            
            const contentWidth = contentContainer.clientWidth;
            const contentHeight = contentContainer.clientHeight;
-           canvas.width = contentWidth * 1.1
+           canvas.width = contentWidth
            canvas.height = contentHeight 
 
      
@@ -204,8 +204,8 @@
            }
      
                 // Create two particles with random positions
-            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 100);
-            const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, 50);
+            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 50);
+            const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 20);
             const particles = [particle1, particle2];
      
 
@@ -220,7 +220,7 @@
               // Check if it's time to create a new particle
                 const currentTime = performance.now();
                 if (currentTime - lastParticleTime > particleInterval) {
-                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 100);
+                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 50);
                 particles.push(newParticle);
                 lastParticleTime = currentTime;
                 }
