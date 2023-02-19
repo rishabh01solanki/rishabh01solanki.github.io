@@ -155,8 +155,8 @@
            
            const contentWidth = contentContainer.clientWidth;
            const contentHeight = contentContainer.clientHeight;
-           canvas.width = contentWidth
-           canvas.height = contentHeight 
+           canvas.width = contentWidth 
+           canvas.height = contentHeight * 0.95
 
      
            // Define particle class
@@ -171,27 +171,42 @@
      
              // Update particle position based on gravity
              updatePosition(particles, dt) {
-               let ax = 0;
-               let ay = 0;
-     
-               for (let i = 0; i < particles.length; i++) {
-                 if (particles[i] !== this) {
-                   const dx = particles[i].x - this.x;
-                   const dy = particles[i].y - this.y;
-                   const distSq = dx*dx + dy*dy;
-                   const dist = Math.sqrt(distSq);
-                   const force = (this.mass * particles[i].mass) / distSq;
-     
-                   ax += force * dx / dist;
-                   ay += force * dy / dist;
-                 }
-               }
-     
-               this.vx += ax * dt;
-               this.vy += ay * dt;
-               this.x += this.vx * dt;
-               this.y += this.vy * dt;
-             }
+                let ax = 0;
+                let ay = 0;
+                let collided = false;
+
+              for (let i = 0; i < particles.length; i++) {
+                    if (particles[i] !== this) {
+                        const dx = particles[i].x - this.x;
+                        const dy = particles[i].y - this.y;
+                        const distSq = dx*dx + dy*dy;
+                        const dist = Math.sqrt(distSq);
+
+                    if (dist < Math.sqrt(this.mass) + Math.sqrt(particles[i].mass)) {
+                      // Particles have collided, stick them together
+                        this.vx = (this.mass * this.vx + particles[i].mass * particles[i].vx) / (this.mass + particles[i].mass);
+                        this.vy = (this.mass * this.vy + particles[i].mass * particles[i].vy) / (this.mass + particles[i].mass);
+                        this.mass += particles[i].mass;
+                        particles.splice(i, 1);
+                        collided = true;
+                        break;
+                        }
+
+                      const force = (this.mass * particles[i].mass) / distSq;
+
+                      ax += force * dx / dist;
+                      ay += force * dy / dist;
+                        }
+                      }
+
+                      if (!collided) {
+                        this.vx += ax * dt;
+                        this.vy += ay * dt;
+                        this.x += this.vx * dt;
+                        this.y += this.vy * dt;
+                        }
+                      }
+
      
              // Draw particle on canvas
              draw() {
@@ -202,13 +217,18 @@
            }
      
                 // Create two particles with random positions
-            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 50);
+            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 30);
             const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 20);
             const particles = [particle1, particle2];
-     
+
+            // Create a particle in the center that never moves
+const centerParticle = new Particle(canvas.width/2, canvas.height/2, 50);
+centerParticle.vx = 0;
+centerParticle.vy = 0;
+particles.push(centerParticle);
 
             let lastParticleTime = performance.now();
-            const particleInterval = 5000; // New particle every 5 seconds
+            const particleInterval = 4000; // New particle every 5 seconds
            
             // Define animation loop
            function animate() {
@@ -218,7 +238,7 @@
               // Check if it's time to create a new particle
                 const currentTime = performance.now();
                 if (currentTime - lastParticleTime > particleInterval) {
-                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 50);
+                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 20);
                 particles.push(newParticle);
                 lastParticleTime = currentTime;
                 }
