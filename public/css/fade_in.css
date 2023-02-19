@@ -13,21 +13,27 @@
   }
 
   .fade-out {
-    animation: fadeOut 12s forwards;
+    animation: fadeOut 30s forwards;
   }
   
     @keyframes fadeOut {
       0% {
-        opacity: 1;
+        opacity: 0;
+      }
+
+      60% {
+        opacity: 0.9;
       }
       70% {
-        opacity: 0.9;
+        opacity: 1;
       }
       100% {
         opacity: 0;
         visibility: hidden;
       }
   }
+
+
   
 
 

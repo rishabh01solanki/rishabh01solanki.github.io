@@ -123,9 +123,7 @@
 
 
 <div class="content container"> 
-     <p class = "fade-out"><em>Collisions are everywhere. Sometimes they are so small that they escape human imagination.
-        Yet, they are vital. Without them, we won't be here. Without them, there is no universe. 
-    </em></p> 
+     
 
     <audio id="myAudio">
         <source src="/assets/chopin.mp3" type="audio/mpeg">
@@ -145,7 +143,19 @@
         }, 0);
       </script>
       
+      <style>
+          canvas {
+            position: absolute;
+                 top: 10;
+                left: 10;
+                }
+          </style>
          <canvas></canvas>
+         <p class = "fade-out" style="margin-top: 10%; margin-bottom: none;"><em>Collisions are everywhere. Sometimes they are so small, they escape human imagination.
+          Yet, they are vital. Without them, we won't be here. Without them, there is no universe. 
+          </em></p> 
+          <p style="font-variant-east-asian: traditional; font-size: small;"> And in these moments of collision, when it seems the world may shatter apart, there is a strange and wondrous beauty.</p>
+         <p class="fade-out" style="font-size: small; margin: none; padding: none; border: none;"> Sound ~ Nocturne, Op. 27, No. 2 by Frédéric Chopin</p>
          <script>
            // JavaScript code goes here
            // Initialize canvas
@@ -156,7 +166,7 @@
            const contentWidth = contentContainer.clientWidth;
            const contentHeight = contentContainer.clientHeight;
            canvas.width = contentWidth 
-           canvas.height = contentHeight * 0.95
+           canvas.height = contentHeight * 1.5
 
      
            // Define particle class
@@ -222,13 +232,13 @@
             const particles = [particle1, particle2];
 
             // Create a particle in the center that never moves
-const centerParticle = new Particle(canvas.width/2, canvas.height/2, 50);
-centerParticle.vx = 0;
-centerParticle.vy = 0;
-particles.push(centerParticle);
+              const centerParticle = new Particle(canvas.width/2, canvas.height/2, 40);
+              centerParticle.vx = 0;
+              centerParticle.vy = 0;
+              particles.push(centerParticle);
 
             let lastParticleTime = performance.now();
-            const particleInterval = 4000; // New particle every 5 seconds
+            const particleInterval = 10000; // New particle every 5 seconds
            
             // Define animation loop
            function animate() {
