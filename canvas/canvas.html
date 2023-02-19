@@ -145,8 +145,6 @@
         }, 0);
       </script>
       
-     
-
          <canvas></canvas>
          <script>
            // JavaScript code goes here
@@ -167,8 +165,8 @@
                this.x = x;
                this.y = y;
                this.mass = mass;
-               this.vx = Math.random() * 10 - 5; // Random velocity between -5 and 5
-               this.vy = Math.random() * 10 - 5; // Random velocity between -5 and 5
+               this.vx = Math.random() * 6 - 3; // Random velocity between -5 and 5
+               this.vy = Math.random() * 6 - 3; // Random velocity between -5 and 5
              }
      
              // Update particle position based on gravity
@@ -210,7 +208,7 @@
      
 
             let lastParticleTime = performance.now();
-            const particleInterval = 7000; // New particle every 5 seconds
+            const particleInterval = 5000; // New particle every 5 seconds
            
             // Define animation loop
            function animate() {
