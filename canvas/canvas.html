@@ -192,7 +192,7 @@
                         const distSq = dx*dx + dy*dy;
                         const dist = Math.sqrt(distSq);
 
-                    if (dist < (Math.sqrt(this.mass) + Math.sqrt(particles[i].mass))*1.2) {
+                    if (dist < (Math.sqrt(this.mass) + Math.sqrt(particles[i].mass))*0.8) {
                       // Particles have collided, stick them together
                         this.vx = (this.mass * this.vx + particles[i].mass * particles[i].vx) / (this.mass + particles[i].mass);
                         this.vy = (this.mass * this.vy + particles[i].mass * particles[i].vy) / (this.mass + particles[i].mass);
@@ -227,15 +227,21 @@
            }
      
                 // Create two particles with random positions
-            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 30);
-            const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 20);
+            const particle1 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 7);
+            const particle2 = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 7);
             const particles = [particle1, particle2];
 
             // Create a particle in the center that never moves
-              const centerParticle = new Particle(canvas.width/2, canvas.height/2, 40);
-              centerParticle.vx = 0;
-              centerParticle.vy = 0;
+              const centerParticle = new Particle(canvas.width/2+80, canvas.height/2, 40);
+              centerParticle.vx = -0.1;
+              centerParticle.vy = -1;
               particles.push(centerParticle);
+
+              // Create a particle in the center that never moves
+              const centerParticle2 = new Particle(canvas.width/2-80, canvas.height/2, 30);
+              centerParticle2.vx = 0.1;
+              centerParticle2.vy = 1;
+              particles.push(centerParticle2);
 
             let lastParticleTime = performance.now();
             const particleInterval = 10000; // New particle every 5 seconds
@@ -248,7 +254,7 @@
               // Check if it's time to create a new particle
                 const currentTime = performance.now();
                 if (currentTime - lastParticleTime > particleInterval) {
-                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 20);
+                const newParticle = new Particle(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 5);
                 particles.push(newParticle);
                 lastParticleTime = currentTime;
                 }
