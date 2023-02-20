@@ -175,8 +175,8 @@
                this.x = x;
                this.y = y;
                this.mass = mass;
-               this.vx = Math.random() * 6 - 3; // Random velocity between -5 and 5
-               this.vy = Math.random() * 6 - 3; // Random velocity between -5 and 5
+               this.vx = Math.random() * 3 - 1.5; // Random velocity between -5 and 5
+               this.vy = Math.random() * 3 - 1.5; // Random velocity between -5 and 5
              }
      
              // Update particle position based on gravity
@@ -192,7 +192,7 @@
                         const distSq = dx*dx + dy*dy;
                         const dist = Math.sqrt(distSq);
 
-                    if (dist < Math.sqrt(this.mass) + Math.sqrt(particles[i].mass)) {
+                    if (dist < (Math.sqrt(this.mass) + Math.sqrt(particles[i].mass))*1.2) {
                       // Particles have collided, stick them together
                         this.vx = (this.mass * this.vx + particles[i].mass * particles[i].vx) / (this.mass + particles[i].mass);
                         this.vy = (this.mass * this.vy + particles[i].mass * particles[i].vy) / (this.mass + particles[i].mass);
