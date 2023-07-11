@@ -190,9 +190,6 @@
   
 
     <!-- Add more projects as needed -->
-
-
-
     <div class="content container">
       <div class="page">
           <h1 class="fade-in">Projects</h1>
@@ -208,6 +205,42 @@
       <p>Advanced Stellar Modeling</p>
   </div>
 </div>
+
+
+
+        <!-- Project SVM details -->
+<div class="project-detail" id="projectSVM">
+  <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 30px;">
+      <h3>Stock Price Forecasting using SVR and Bootstrap</h3>
+      <button class="back-button" onclick="goBack()">Go Back</button>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; justify-content: space-between;">
+          <div>
+              <img src="/assets/svr_stock.png" alt="Stock Price Forecast" style="width: 700px; height: auto;"/>
+          </div>
+      </div>
+      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Predicted Stock Prices using Support Vector Regression (SVR) with Radial Basis Function (RBF) Kernel and Bootstrapping.
+      </em></figcaption>
+  </div>
+
+  <p>This project employs the Support Vector Regression (SVR) method, a machine learning algorithm used 
+    for regression problems, which builds upon the principles of Support Vector Machines (SVM). SVR employs 
+    a radial basis function (RBF) kernel, which allows the model to handle nonlinear relationships between
+     the features and the target variable. It also uses the concept of bootstrapping, a statistical 
+     resampling technique used to estimate the variability of model predictions. In this case, 1000 
+     bootstrap samples are generated from the training data. Each bootstrap sample is used to train the 
+     SVR model, and the model's predictions on the test set are stored. The lower and upper bounds of 
+     the prediction intervals are then calculated by taking the 2.5th and 97.5th percentiles of these 
+     bootstrap predictions. These percentiles are transformed back to the original scale of the target 
+     variable, providing a range in which we can expect 95% of the future stock prices to fall. 
+     The visualization includes the actual stock prices and the predicted stock prices along with their 
+     prediction intervals, illustrating the model's predictions and their associated uncertainty.</p>
+  <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
+
+</div>
+
 
   
           <!-- Project 1 details -->
