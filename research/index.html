@@ -194,8 +194,13 @@
       <div class="page">
           <h1 class="fade-in">Projects</h1>
   
-          <!-- Project templates -->
+<!-- Project templates -->
+
 <div class="grid-container" id="project-list">
+  <div class="grid-item" onclick="showProjectDetail('projectSVM')">
+      <img src="/assets/svr_stock.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
+      <p>Forecasting Stock prices using Support Vector Regression</p>
+  </div>
   <div class="grid-item" onclick="showProjectDetail('project1')">
       <img src="/assets/consmptn_dec.gif" alt="EnergyDash" style="cursor: pointer; width: 100%; height: auto;">
       <p>EnergyDash</p>
@@ -206,14 +211,13 @@
   </div>
 </div>
 
-
-
-        <!-- Project SVM details -->
+<!-- Project SVM details -->
 <div class="project-detail" id="projectSVM">
   <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 30px;">
       <h3>Stock Price Forecasting using SVR and Bootstrap</h3>
       <button class="back-button" onclick="goBack()">Go Back</button>
   </div>
+
 
   <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="display: flex; justify-content: space-between;">
@@ -225,7 +229,7 @@
       </em></figcaption>
   </div>
 
-  <p>This project employs the Support Vector Regression (SVR) method, a machine learning algorithm used 
+    <p>This project employs the Support Vector Regression (SVR) method, a machine learning algorithm used 
     for regression problems, which builds upon the principles of Support Vector Machines (SVM). SVR employs 
     a radial basis function (RBF) kernel, which allows the model to handle nonlinear relationships between
      the features and the target variable. It also uses the concept of bootstrapping, a statistical 
@@ -237,10 +241,10 @@
      variable, providing a range in which we can expect 95% of the future stock prices to fall. 
      The visualization includes the actual stock prices and the predicted stock prices along with their 
      prediction intervals, illustrating the model's predictions and their associated uncertainty.</p>
-  <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
+    <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
 
 </div>
-
+</div>
 
   
           <!-- Project 1 details -->
