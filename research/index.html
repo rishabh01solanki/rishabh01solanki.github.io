@@ -184,16 +184,35 @@
 </div>
 </div>
 
+<style>
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: start; 
+  gap: 50px; 
+}
 
-
+.aws-badge img {
+  height: 120px; /* adjust to the size you want */
+  margin-top: 38px; /* adjust this value to set how far below the title the badge appears */
+  cursor: pointer;
+}
+</style>
 
   
 
     <!-- Add more projects as needed -->
     <div class="content container">
       <div class="page">
-          <h1 class="fade-in">Projects</h1>
-  
+          <div class="header-container fade-in">
+              <h1>Projects</h1>
+              <div class="aws-badge" onclick="window.open('https://www.credly.com/badges/eea813b9-4235-47bb-9371-8b21befe06ea/public_url', '_blank')">
+                  <img src="/assets/aws-certified-machine-learning-specialty.png" alt="AWS Certified Badge">
+              </div>
+              <div class="aws-badge" onclick="window.open('https://www.credly.com/badges/0b7c6efc-3729-410b-b36b-8b0248ed3ed3/public_url', '_blank')">
+                <img src="/assets/aws-certified-cloud-practitioner.png" alt="AWS Certified Badge">
+            </div>
+          </div>
 <!-- Project templates -->
 
 <div class="grid-container" id="project-list">
