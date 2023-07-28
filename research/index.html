@@ -8,13 +8,13 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  <meta name="description" content="Homepage of Rishabh Solanki">
+  <meta name="description" content="Projects">
   <meta name="keywords" content="Rishabh, Solanki, Data Science, Machine learning, Physics">
   <meta name="author" content="Rishabh Solanki">
   
   <title>
     
-      Project &middot; Rishabh
+      Projects &middot; Rishabh
     
   </title>
 
@@ -25,8 +25,6 @@
   <link rel="stylesheet" href="/public/css/fade_in.css">
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
-  <!--- Javascript -->
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
     <script>
@@ -36,6 +34,8 @@
   
       gtag('config', 'G-HBVJGEV8DR');
     </script>
+
+
 
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
@@ -54,99 +54,14 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
   </script>
 
-<!-- Additional CSS for grid layout and zoom effect -->
-<style>
-  .grid-container {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 10px;
-      padding: 10px;
-  }
-  .grid-item {
-      background-color: #f1f1f1;
-      padding: 20px;
-      font-size: 30px;
-      text-align: center;
-      transition: transform .2s;
-      cursor: pointer;
-  }
-  .grid-item:hover {
-      transform: scale(1.1);
-  }
-  .project-detail {
-      display: none;
-  }
-</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>  
 
-<!-- Additional CSS for grid layout and zoom effect -->
-<style>
-  .grid-container {
-      display: grid;
-      grid-template-columns: auto auto;
-      gap: 30px;
-      padding: 10px;
-  }
-  .grid-item {
-      background-color: #f1f1f1;
-      padding: 10px;
-      font-size: 30px;
-      text-align: center;
-      transition: transform .2s;
-      cursor: pointer;
-  }
-  .grid-item:hover {
-      transform: scale(1.07);
-  }
-  .project-detail {
-      display: none;
-  }
-  .back-button {
-    font-family: inherit;
-    font-size: 20px;
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .back-button:hover {
-    transform: scale(1.3);
-  }
-
-  .back-button::before {
-    content: "\2190";
-    font-weight: bolder;
-    padding-right: 10px;
-  }
-
-  .back-button:hover {
-      background-color: white;
-      color: black;
-  }
-</style>
-
-<!-- Additional Javascript for handling clicks -->
-<script>
-  function showProjectDetail(projectId) {
-      document.getElementById('project-list').style.display = 'none';
-      document.getElementById(projectId).style.display = 'block';
-  }
-  function goBack() {
-  var projectDetails = document.getElementsByClassName('project-detail');
-  for (var i = 0; i < projectDetails.length; i++) {
-    projectDetails[i].style.display = 'none';
-  }
-  var projectList = document.getElementById('project-list');
-  projectList.style.display = 'grid';
-}
-
-</script>
 </head>
 
 
 <body>
 
-  <div class="sidebar animated">
+<div class="sidebar animated">
 <div class="container sidebar-sticky">
   <div class="sidebar-about">
     <h1>Discover</h1>
@@ -184,57 +99,120 @@
 </div>
 </div>
 
-<style>
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: start; 
-  gap: 50px; 
-}
 
-.aws-badge img {
-  height: 120px; /* adjust to the size you want */
-  margin-top: 38px; /* adjust this value to set how far below the title the badge appears */
-  cursor: pointer;
-}
+<div class="content container">
+  <div class="page">
+
+    <script>
+      function showProjectDetails(projectId) {
+          document.getElementById('project-list').style.display = 'none';
+          document.getElementById(projectId).style.display = 'block';
+          gsap.from('#' + projectId, {duration: 0.5, y:'100%', opacity: 0});
+      }
+    
+      function hideProjectDetails() {
+          const projectDetails = document.getElementsByClassName('project-detail');
+          for (let i = 0; i < projectDetails.length; i++) {
+              projectDetails[i].style.display = 'none';
+          }
+          document.getElementById('project-list').style.display = 'grid';
+          gsap.from('#project-list', {duration: 0.5, y:'-100%', opacity: 0});
+      }
+    </script>
+    
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+  .content-container {
+      margin: 20 auto;
+      padding: 10 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+
+
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+      margin-top: 20px;
+  }
+
+  .grid-item {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .grid-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .grid-item img {
+      width: 100%;
+      border-radius: 20px;
+  }
+
+  .project-detail {
+      display: none;
+      text-align: center;
+      margin: 20px 0;
+  }
+
+  .back-button {
+      font-size: 18px;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+  }
+
+  .back-button:hover {
+      background: #7a7979;
+  }
+
+  .back-button::before {
+      content: "\2190";
+      padding-right: 5px;
+  }
 </style>
 
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
-    <!-- Add more projects as needed -->
-    <div class="content container">
-      <div class="page">
-          <div class="header-container fade-in">
-              <h1>Projects</h1>
-              <div class="aws-badge" onclick="window.open('https://www.credly.com/badges/eea813b9-4235-47bb-9371-8b21befe06ea/public_url', '_blank')">
-                  <img src="/assets/aws-certified-machine-learning-specialty.png" alt="AWS Certified Badge">
-              </div>
-              <div class="aws-badge" onclick="window.open('https://www.credly.com/badges/0b7c6efc-3729-410b-b36b-8b0248ed3ed3/public_url', '_blank')">
-                <img src="/assets/aws-certified-cloud-practitioner.png" alt="AWS Certified Badge">
-            </div>
-          </div>
-<!-- Project templates -->
 
-<div class="grid-container" id="project-list">
-  <div class="grid-item" onclick="showProjectDetail('projectSVM')">
-      <img src="/assets/svr_stock.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
-      <p>Forecasting Stock prices using Support Vector Regression</p>
-  </div>
-  <div class="grid-item" onclick="showProjectDetail('project1')">
-      <img src="/assets/consmptn_dec.gif" alt="EnergyDash" style="cursor: pointer; width: 100%; height: auto;">
-      <p>EnergyDash</p>
-  </div>
-  <div class="grid-item" onclick="showProjectDetail('project2')">
-      <img src="/assets/mhd_dens.jpeg" alt="Advanced Stellar Modeling" style="cursor: pointer; width: 100%; height: auto;">
-      <p>Advanced Stellar Modeling</p>
-  </div>
-</div>
 
-<!-- Project SVM details -->
+  <h1>Projects</h1>
+  <div class="grid" id="project-list">
+      <!-- Grid items here -->
+      <div class="grid-item" onclick="showProjectDetails('projectSVM')">
+        <img src="/assets/svr_stock.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
+        <p>Forecasting Stock prices using Support Vector Regression</p>
+    </div>
+    <div class="grid-item" onclick="showProjectDetails('project1')">
+        <img src="/assets/consmptn_dec.gif" alt="EnergyDash" style="cursor: pointer; width: 100%; height: auto;">
+        <p>EnergyDash</p>
+    </div>
+    <div class="grid-item" onclick="showProjectDetails('project2')">
+        <img src="/assets/mhd_dens.jpeg" alt="Advanced Stellar Modeling" style="cursor: pointer; width: 100%; height: auto;">
+        <p>Advanced Stellar Modeling</p>
+    </div>
+  </div>
+
+      <!-- Project SVM details -->
 <div class="project-detail" id="projectSVM">
-  <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 30px;">
+  <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
       <h3>Stock Price Forecasting using SVR and Bootstrap</h3>
-      <button class="back-button" onclick="goBack()">Go Back</button>
+      <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
   </div>
 
 
@@ -263,15 +241,15 @@
     <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
 
 </div>
-</div>
+
 
   
-          <!-- Project 1 details -->
+   <!-- Project 1 details -->
           <div class="project-detail" id="project1">
               <!-- Your existing project details for EnergyDash here -->
-              <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 30px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
                 <h3>EnergyDash</h3>
-                <button class="back-button" onclick="goBack()">Go Back</button>
+                <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
               </div>
               
               
@@ -310,9 +288,9 @@
           <!-- Project 2 details -->
           <div class="project-detail" id="project2">
               <!-- Your existing project details for Advanced Stellar Modeling here -->
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
                 <h3>Advanced Stellar Modeling</h3>
-                <button class="back-button" onclick="goBack()">Go Back</button>
+                <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
               </div>
         
                 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -344,13 +322,10 @@
 
           </div>
   
-      </div>
-  </div>
-  
-  </body>
-  </html>
+</div>
 
-        </div>
+</body>
 
-    </body>
 </html>
+
+ 
