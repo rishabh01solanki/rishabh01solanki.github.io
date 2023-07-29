@@ -121,7 +121,7 @@
     </script>
     
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+  
 
 
   .content-container {
@@ -194,10 +194,16 @@
   <h1>Projects</h1>
   <div class="grid" id="project-list">
       <!-- Grid items here -->
+      <div class="grid-item" onclick="showProjectDetails('projectML')">
+          <img src="/assets/roc.png" alt="Machine Learning Project" style="cursor: pointer; width: 100%; height: auto;">
+          <p>Sentiment Analysis on Movie Reviews using NLP and Machine Learning</p>
+      </div>
+
       <div class="grid-item" onclick="showProjectDetails('projectSVM')">
         <img src="/assets/svr_stock.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
         <p>Forecasting Stock prices using Support Vector Regression</p>
-    </div>
+      </div>
+
     <div class="grid-item" onclick="showProjectDetails('project1')">
         <img src="/assets/consmptn_dec.gif" alt="EnergyDash" style="cursor: pointer; width: 100%; height: auto;">
         <p>EnergyDash</p>
@@ -208,7 +214,50 @@
     </div>
   </div>
 
-      <!-- Project SVM details -->
+      <!-- Project details -->
+
+<!-- Add this as a new project detail section -->
+<div class="project-detail" id="projectML">
+    <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
+        <h3>Machine Learning for Movie Review Classification</h3>
+        <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <img src="/assets/roc.png" alt="ROC Curve" style="width: 700px; height: auto;"/>
+            </div>
+        </div>
+        <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Receiver Operating Characteristic (ROC) curve for the model performance on movie review classification task.
+        </em></figcaption>
+    </div>
+
+    <p>In this project, a machine learning model was trained to classify movie reviews as positive or 
+      negative based on their text. This involved pre-processing of the text data, vectorization, and 
+      training a model using several machine learning algorithms for comparison. The model was evaluated 
+      using various metrics, including the ROC curve, F1 score, and confusion matrix, to assess its 
+      performance and understand its strengths and limitations.
+    </p>
+
+     <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <img src="/assets/cfmtx.png" alt="Confusion matrix" style="width: 700px; height: auto;"/>
+            </div>
+        </div>
+        <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Confusion matrix for different models.
+        </em></figcaption>
+    </div>
+
+    <p><a href="https://github.com/rishabh01solanki/TF-IDF">View this project on GitHub</a></p>
+</div>
+
+
+
+
+
+
 <div class="project-detail" id="projectSVM">
   <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
       <h3>Stock Price Forecasting using SVR and Bootstrap</h3>

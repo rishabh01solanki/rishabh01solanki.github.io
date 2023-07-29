@@ -31,8 +31,11 @@
  * Update the foundational and global aspects of the page.
  */
 
+ 
+
+
  html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
 }
 @media (min-width: 48rem) {
   html {
