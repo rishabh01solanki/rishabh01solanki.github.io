@@ -35,7 +35,9 @@
 
 
  html {
-  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: lighter;
 }
 @media (min-width: 48rem) {
   html {
@@ -98,7 +100,7 @@ a.sidebar-nav-item:focus {
   text-decoration: underline;
 }
 .sidebar-nav-item.active {
-  font-weight: bold;
+  font-weight:bold;
 }
 
 
