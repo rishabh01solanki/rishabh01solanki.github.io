@@ -217,40 +217,46 @@
       <!-- Project details -->
 
 <!-- Add this as a new project detail section -->
-<div class="project-detail" id="projectML">
-    <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
-        <h3>Sentiment Analysis on Movie Reviews using NLP (TF-IDF)  </h3>
-        <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
-    </div>
+<div class="project-detail" id="projectML" style="text-align: left;">
+  <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
+  <div style="margin-bottom: 10px;">
+      <h3>Sentiment Analysis on Movie Reviews using NLP (TF-IDF)</h3>
+  </div>
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
-        <div style="display: flex; justify-content: space-between;">
-            <div>
-                <img src="/assets/roc.png" alt="ROC Curve" style="width: 100%; height: auto;"/>
-            </div>
-        </div>
-        <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Receiver Operating Characteristic (ROC) curve for the model performance on movie review classification task.
-        </em></figcaption>
-    </div>
+  <h5>Project Overview</h5>
+  <p>In this project, a machine learning model was trained to classify movie reviews as positive or negative based on their text. By leveraging technologies such as Python, NLTK, and Scikit-Learn, the project showcases the application of Natural Language Processing (NLP) to derive meaningful insights from raw text data.</p>
 
-    <p>In this project, a machine learning model was trained to classify movie reviews as positive or 
-      negative based on their text. This involved pre-processing of the text data, vectorization, and 
-      training a model using several machine learning algorithms for comparison. The model was evaluated 
-      using various metrics, including the ROC curve, F1 score, and confusion matrix, to assess its 
-      performance and understand its strengths and limitations.
-    </p>
+  <h5>Data Ingestion</h5>
+  <p>The data was sourced from the movie_reviews corpus of the NLTK library, consisting of movie reviews labeled as either 'positive' or 'negative'. It provided a comprehensive dataset for training and validating the machine learning models.</p>
 
-     <div style="display: flex; flex-direction: column; align-items: center;">
-        <div style="display: flex; justify-content: space-between;">
-            <div>
-                <img src="/assets/cfmtx.png" alt="Confusion matrix" style="width: 100%; height: auto;"/>
-            </div>
-        </div>
-        <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Confusion matrix for different models.
-        </em></figcaption>
-    </div>
+  <h5>Preprocessing and Feature Extraction</h5>
+  <p>Several preprocessing steps were carried out to prepare the data:</p>
+  <ul>
+      <li>Tokenization: Conversion of the raw text into individual words or "tokens."</li>
+      <li>Stopword Removal: Removal of common words that don't carry semantic meaning.</li>
+      <li>Stemming: Reduction of words to their base or "stem" form.</li>
+      <li>Vectorization: Conversion of the processed text into numerical feature vectors using the TF-IDF method.</li>
+  </ul>
 
-    <p><a href="https://github.com/rishabh01solanki/TF-IDF">View this project on GitHub</a></p>
+  <h5>Model Training and Evaluation</h5>
+  <p>Various machine learning models were trained and evaluated, including Logistic Regression, Random Forest, Naive Bayes, and SVM. The evaluation was conducted using the AUC-ROC metric, and the ROC curves were visualized for comparison.</p>
+
+  <h5>Results and Conclusion</h5>
+  <p>The SVM model outperformed the others, with a significant ROC_AUC score. This project has practical applications in areas like customer feedback interpretation and product recommendation. Future enhancements include experimenting with other machine learning techniques and fine-tuning the hyperparameters.</p>
+
+  <div style="display: flex; flex-direction: column;">
+      <div>
+          <img src="/assets/roc.png" alt="ROC Curve" style="width: 100%; height: auto;" />
+          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Receiver Operating Characteristic (ROC) curve for the model performance on movie review classification task.</em></figcaption>
+      </div>
+
+      <div>
+          <img src="/assets/cfmtx.png" alt="Confusion matrix" style="width: 100%; height: auto;" />
+          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Confusion matrix for different models.</em></figcaption>
+      </div>
+  </div>
+
+  <p><a href="https://github.com/rishabh01solanki/TF-IDF">View this project on GitHub</a></p>
 </div>
 
 
@@ -258,10 +264,11 @@
 
 
 
-<div class="project-detail" id="projectSVM">
+
+<div class="project-detail" id="projectSVM" style="text-align: left;">
+  <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
   <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
       <h3>Stock Price Forecasting using SVR and Bootstrap</h3>
-      <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
   </div>
 
   <div style="display: flex; flex-direction: column; align-items: center;">
@@ -293,11 +300,10 @@
 
   
    <!-- Project 1 details -->
-          <div class="project-detail" id="project1">
-              <!-- Your existing project details for EnergyDash here -->
+          <div class="project-detail" id="project1" style="text-align: left;">
+              <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
               <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
                 <h3>EnergyDash</h3>
-                <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
               </div>
               
               
@@ -334,11 +340,10 @@
           </div>
   
           <!-- Project 2 details -->
-          <div class="project-detail" id="project2">
-              <!-- Your existing project details for Advanced Stellar Modeling here -->
+          <div class="project-detail" id="project2" style="text-align: left;">
+              <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
               <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
                 <h3>Advanced Stellar Modeling</h3>
-                <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
               </div>
         
                 <div style="display: flex; flex-direction: column; align-items: center;">
