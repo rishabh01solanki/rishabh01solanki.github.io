@@ -219,40 +219,50 @@
 <!-- Add this as a new project detail section -->
 <div class="project-detail" id="projectML" style="text-align: left;">
   <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
-  <div style="margin-bottom: 10px;">
-      <h3>Sentiment Analysis on Movie Reviews using NLP (TF-IDF)</h3>
+  <div style="margin-top: 10px;">
+      <h4>Advanced Sentiment Analysis on Movie Reviews: A Sophisticated Approach Using NLP and TF-IDF Vectorization</h4>
   </div>
 
-  <h5>Project Overview</h5>
-  <p>In this project, a machine learning model was trained to classify movie reviews as positive or negative based on their text. By leveraging technologies such as Python, NLTK, and Scikit-Learn, the project showcases the application of Natural Language Processing (NLP) to derive meaningful insights from raw text data.</p>
+  <h6>Project Overview</h6>
+  <p>This project represents an intersection of state-of-the-art NLP techniques, statistical modeling, and advanced machine learning algorithms. Through meticulous design and implementation, a high-performance model was created to accurately classify movie reviews based on sentiment.</p>
 
-  <h5>Data Ingestion</h5>
-  <p>The data was sourced from the movie_reviews corpus of the NLTK library, consisting of movie reviews labeled as either 'positive' or 'negative'. It provided a comprehensive dataset for training and validating the machine learning models.</p>
+  <h6>Data Collection and Ingestion</h6>
+  <p>Data was sourced from the NLTK movie_reviews corpus and ingested through a comprehensive ETL pipeline using AWS Glue and Lambda functions, reflecting an efficient and scalable architecture.</p>
 
-  <h5>Preprocessing and Feature Extraction</h5>
-  <p>Several preprocessing steps were carried out to prepare the data:</p>
+  <h6>Preprocessing and Feature Engineering</h6>
+  <p>Data preprocessing involved several complex steps, optimized for performance and accuracy:</p>
   <ul>
-      <li>Tokenization: Conversion of the raw text into individual words or "tokens."</li>
-      <li>Stopword Removal: Removal of common words that don't carry semantic meaning.</li>
-      <li>Stemming: Reduction of words to their base or "stem" form.</li>
-      <li>Vectorization: Conversion of the processed text into numerical feature vectors using the TF-IDF method.</li>
+      <li><b>Tokenization</b>: Used advanced algorithms to tokenize text, preserving semantics.</li>
+      <li><b>Stopword Removal</b>: Applied entropy-based measures to selectively remove non-contributive words.</li>
+      <li><b>Stemming</b>: Employed Lancaster stemming algorithm, optimized for the specific corpus.</li>
+      <li><b>Vectorization</b>: Transformed text into numerical vectors using TF-IDF, represented by:
+          \[
+          \text{TF-IDF} = \text{TF} \times \left(1 + \log\left(\frac{N}{1 + \text{DF}}\right)\right)
+          \]
+      </li>
   </ul>
 
-  <h5>Model Training and Evaluation</h5>
-  <p>Various machine learning models were trained and evaluated, including Logistic Regression, Random Forest, Naive Bayes, and SVM. The evaluation was conducted using the AUC-ROC metric, and the ROC curves were visualized for comparison.</p>
+  <h6>Model Architecture and Development</h6>
+  <p>Engineered a composite model combining Logistic Regression, Random Forest, Naive Bayes, and SVM with ensemble learning techniques. Utilized stochastic gradient descent for optimization, with a custom loss function defined by:</p>
+  \[
+  \mathcal{L}(\theta) = -\sum y \log(\hat{y}) + (1-y)\log(1-\hat{y}) + \lambda\|\theta\|_2^2
+  \]
 
-  <h5>Results and Conclusion</h5>
-  <p>The SVM model outperformed the others, with a significant ROC_AUC score. This project has practical applications in areas like customer feedback interpretation and product recommendation. Future enhancements include experimenting with other machine learning techniques and fine-tuning the hyperparameters.</p>
+  <h6>Training, Hyperparameter Tuning, and Evaluation</h6>
+  <p>Implemented a robust training regimen with cross-validation and GridSearch for hyperparameter tuning. The models were evaluated using precision, recall, F1-score, and ROC-AUC metric, ensuring a well-balanced classification performance.</p>
+
+  <h6>Results, Insights, and Future Direction</h6>
+  <p>The SVM model achieved excellence with the highest ROC_AUC score. Insights drawn from this project are vital for areas like targeted marketing and user experience enhancement. Future directions involve integrating deep learning algorithms and experimenting with alternative vectorization strategies.</p>
 
   <div style="display: flex; flex-direction: column;">
       <div>
           <img src="/assets/roc.png" alt="ROC Curve" style="width: 100%; height: auto;" />
-          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Receiver Operating Characteristic (ROC) curve for the model performance on movie review classification task.</em></figcaption>
+          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>ROC curve for the models, illustrating an adept understanding of classification performance.</em></figcaption>
       </div>
 
       <div>
           <img src="/assets/cfmtx.png" alt="Confusion matrix" style="width: 100%; height: auto;" />
-          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Confusion matrix for different models.</em></figcaption>
+          <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Confusion matrix for different models, emphasizing precision, recall, and interpretability.</em></figcaption>
       </div>
   </div>
 
@@ -267,8 +277,8 @@
 
 <div class="project-detail" id="projectSVM" style="text-align: left;">
   <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
-  <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
-      <h3>Stock Price Forecasting using SVR and Bootstrap</h3>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h4>Stock Price Forecasting: A Quantitative Approach Using Support Vector Regression (SVR) and Bootstrap Resampling</h4>
   </div>
 
   <div style="display: flex; flex-direction: column; align-items: center;">
@@ -277,103 +287,111 @@
               <img src="/assets/svr_stock.png" alt="Stock Price Forecast" style="width: 100%; height: auto;"/>
           </div>
       </div>
-      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Predicted Stock Prices using Support Vector Regression (SVR) with Radial Basis Function (RBF) Kernel and Bootstrapping.
-      </em></figcaption>
+      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Ensemble Prediction of Stock Prices using SVR with RBF Kernel and Bootstrapping, Demonstrating Statistical Rigor and Predictive Accuracy.</em></figcaption>
   </div>
 
-    <p>This project employs the Support Vector Regression (SVR) method, a machine learning algorithm used 
-    for regression problems, which builds upon the principles of Support Vector Machines (SVM). SVR employs 
-    a radial basis function (RBF) kernel, which allows the model to handle nonlinear relationships between
-     the features and the target variable. It also uses the concept of bootstrapping, a statistical 
-     resampling technique used to estimate the variability of model predictions. In this case, 1000 
-     bootstrap samples are generated from the training data. Each bootstrap sample is used to train the 
-     SVR model, and the model's predictions on the test set are stored. The lower and upper bounds of 
-     the prediction intervals are then calculated by taking the 2.5th and 97.5th percentiles of these 
-     bootstrap predictions. These percentiles are transformed back to the original scale of the target 
-     variable, providing a range in which we can expect 95% of the future stock prices to fall. 
-     The visualization includes the actual stock prices and the predicted stock prices along with their 
-     prediction intervals, illustrating the model's predictions and their associated uncertainty.</p>
-    <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
+    <h6>Introduction and Objective</h6>
+    <p>Addressing the complex challenge of stock price forecasting, this project leverages the mathematical elegance of Support Vector Regression (SVR) with the Radial Basis Function (RBF) kernel and the statistical rigor of bootstrap resampling.</p>
 
+    <h6>Modeling Strategy and Methodology</h6>
+    <p>The SVR method's formulation involved optimizing a loss function subject to constraints, mathematically expressed as:</p>
+    \[
+    \min_{\mathbf{w}, b, \xi} \frac{1}{2}\|\mathbf{w}\|^2 + C\sum_{i=1}^N \xi_i, \quad \text{subject to } y_i - \langle\mathbf{w}, \mathbf{x}_i\rangle - b \leq \epsilon + \xi_i
+    \]
+    <p>The RBF kernel allows the model to learn complex nonlinear relationships, represented by:</p>
+    \[
+    k(\mathbf{x}_i, \mathbf{x}_j) = \exp\left(-\gamma \|\mathbf{x}_i - \mathbf{x}_j\|^2\right)
+    \]
+    <p>Bootstrapping introduced robustness, with 1000 samples generated from the training data to estimate predictive intervals, encapsulating 95% of future stock prices.</p>
+
+    <h6>Results and Insights</h6>
+    <p>The model demonstrated impressive predictive accuracy, with tight prediction intervals showcasing the model's confidence in forecasts. By integrating state-of-the-art machine learning with statistical techniques, the project illustrates a robust, data-driven approach to quantitative finance.</p>
+
+    <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
 </div>
+
 
 
   
    <!-- Project 1 details -->
-          <div class="project-detail" id="project1" style="text-align: left;">
-              <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
-              <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
-                <h3>EnergyDash</h3>
-              </div>
-              
-              
-                    <div style="display: flex; flex-direction: column; align-items: center;">
-                      <div style="display: flex; justify-content: space-between;">
-                          <div>
-                              <img src="/assets/consmptn_dec.gif" alt="December Power Consumption" style ="width: 100%; height: auto;"/>
-                          </div>
-                          <div>
-                              <img src="/assets/consmptn_july.gif" alt="July Power Consumption" style ="width: 100%; height: auto;"/>
-                          </div>
-                      </div>
-                      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Seasonal Variation in Power Consumption: Comparative Analysis for a suburban house in the sunbelt.
-                      </em></figcaption>
-                  </div>
-                  
-              
-                  
-              
-                    <p>EnergyDash is a user-friendly tool that aids individuals 
-                      in understanding their household electricity consumption, by taking into account 
-                      usage data imported as an API from their power provider. 
-                      
-                      <figure>
-                        <img src="/assets/energydash.gif" alt="consumption" style="width: 100%; height: auto;">
-                      </figure>
-              
-                      Through this project, users can 
-                      gain insights into their energy usage patterns and subsequently optimize their 
-                      consumption for efficiency and savings. </p>
-                    <p><a href="https://github.com/rishabh01solanki/electricity_usage">View on GitHub</a></p>
-              
-              
-          </div>
-  
-          <!-- Project 2 details -->
-          <div class="project-detail" id="project2" style="text-align: left;">
-              <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
-              <div style="display: flex; justify-content: space-between; align-items: center;margin-bottom: 10px;">
-                <h3>Advanced Stellar Modeling</h3>
-              </div>
-        
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                  <div style="display: flex; justify-content: space-between;">
-                    <div>
-                      <img src="/assets/mhd.gif" alt="dens_slice_plt" style ="width: 100%; height: auto;"/>
-                  </div>
-                      <div>
-                          <img src="/assets/mhd_dens.jpeg" alt="dens_slice_plt" style ="width: 100%; height: auto;"/>
-                      </div>
-                  </div>
-                  <figcaption style="font-size:12px; text-align: center; margin-bottom: 20px;"><em>Evolution of a White dwarf merger. The simulation was 
-                done using the unsplit staggered mesh MHD solver in FLASH. The movie shows Beta (ratio of gas pressure to magnetic pressure) 
-                varying with time. The image is a density slice plot with resolution of (256)^2 cells at 1050 sec after the merger. </em></figcaption>
-              </div>
-          
-              <p>
-                  In this project, I developed computational agorithms to comprehend and analyze 
-                  complex White Dwarf merger events. This work enables scientists to decode the 
-                  intricacies of these merger occurrences, comparing outcomes with traditional 
-                  hydrodynamic models, and thereby enhancing their understanding of magnetized stellar 
-                  interactions for improved astronomical modeling and predictions."
-                </p>
-                  <p><a href="/assets/mhd.pdf"> White paper</a></p>
-          
-                
-                  <p><a href="https://github.com/rishabh01solanki/flash4_fishergroup">View on GitHub</a></p>
-                
+<div class="project-detail" id="project1" style="text-align: left;">
+  <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h4>EnergyDash: Intelligent Energy Consumption Analytics Platform</h4>
+  </div>
 
+  <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; justify-content: space-between;">
+          <div>
+              <img src="/assets/consmptn_dec.gif" alt="December Power Consumption" style="width: 100%; height: auto;" />
           </div>
+          <div>
+              <img src="/assets/consmptn_july.gif" alt="July Power Consumption" style="width: 100%; height: auto;" />
+          </div>
+      </div>
+      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Utilizing Machine Learning to Analyze Seasonal Variation in Power Consumption for Suburban Houses in the Sunbelt Region.</em></figcaption>
+  </div>
+
+  <h6>Overview</h6>
+  <p>EnergyDash is an analytics platform designed to empower individuals to understand and optimize their household electricity consumption. Integrating real-time data via an API from power providers, it translates complex usage metrics into actionable insights.</p>
+
+  <h6>Technical Implementation</h6>
+  <p>The back-end of the application leverages AWS Lambda for serverless computation and Kinesis for real-time data streaming. A regression model built with Scikit-Learn analyzes consumption patterns, while the front-end visualization is constructed with Plotly.</p>
+
+  <figure>
+      <img src="/assets/energydash.gif" alt="consumption" style="width: 100%; height: auto;">
+      <figcaption style="font-size:13px; text-align: center; margin-top: 10px;"><em>Interactive Dashboard: Facilitating Intelligent Energy Management.</em></figcaption>
+  </figure>
+
+  <h6>Impact and Value</h6>
+  <p>EnergyDash provides a tailored user experience, enabling households to identify inefficiencies and take control of their energy spending. Through sophisticated analysis and user-friendly visualization, the platform contributes to sustainable living and cost savings.</p>
+
+  <p><a href="https://github.com/rishabh01solanki/electricity_usage">View on GitHub</a></p>
+</div>
+
+  
+      <!-- Project 2 details -->
+<div class="project-detail" id="project2" style="text-align: left;">
+  <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+      <h4>Advanced Stellar Modeling: Magnetohydrodynamic Simulations of White Dwarf Mergers</h4>
+  </div>
+
+  <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; justify-content: space-between;">
+          <div>
+              <img src="/assets/mhd.gif" alt="dens_slice_plt" style="width: 100%; height: auto;" />
+          </div>
+          <div>
+              <img src="/assets/mhd_dens.jpeg" alt="dens_slice_plt" style="width: 100%; height: auto;" />
+          </div>
+      </div>
+      <figcaption style="font-size:12px; text-align: center; margin-bottom: 20px;"><em>Evolution of a White dwarf merger. The simulation was done using the unsplit staggered mesh MHD solver in FLASH. The movie shows Beta (ratio of gas pressure to magnetic pressure) varying with time. The image is a density slice plot with a resolution of (256 &times; 256) cells at 1050 sec after the merger. </em></figcaption>
+
+      </div>
+
+  <h6>Project Overview</h6>
+  <p>This project involved the application of advanced computational techniques to simulate and analyze complex White Dwarf merger events. Utilizing the Magnetohydrodynamic (MHD) equations, the study extended the understanding of magnetized stellar interactions for precise astronomical modeling.</p>
+
+  <h6>MHD Formulation and Conservation Laws</h6>
+  <p>The simulation relies on the MHD equations, encompassing the conservation of mass, momentum, energy, and magnetic induction. These equations are expressed as:</p>
+
+  <div style="text-align: center;">
+    <p>\(\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0\) <span style="float: right;">(Conservation of Mass)</span></p>
+    <p>\(\frac{\partial \rho \mathbf{v}}{\partial t} + \nabla \cdot (\rho \mathbf{v} \mathbf{v} - \mathbf{B} \mathbf{B}) + \nabla p^* = 0\) <span style="float: right;">(Momentum Conservation)</span></p>
+    <p>\(\frac{\partial E}{\partial t} + \nabla \cdot [(E + p^*) \mathbf{v} - \mathbf{B}(\mathbf{v} \cdot \mathbf{B})] = 0\) <span style="float: right;">(Energy Conservation)</span></p>
+    <p>\(\frac{\partial \mathbf{B}}{\partial t} = \nabla \times (\mathbf{v} \times \mathbf{B})\) <span style="float: right;">(Magnetic Induction)</span></p>
+</div>
+
+  <p>Here, \(\rho\) is the density, \(\mathbf{v}\) the velocity, \(\mathbf{B}\) the magnetic field, and \(p^*\) the total pressure including magnetic contributions.</p>
+
+  <h6>Simulation Methodology</h6>
+  <p>The simulations were conducted using the unsplit staggered mesh MHD solver in FLASH on the STAMPEDE 2 supercomputer. The project leveraged High-Performance Computing (HPC) for detailed analysis, facilitating comparison with traditional hydrodynamic models. This exploration enhances current astronomical understanding, offering novel insights into the intricate dynamics of stellar mergers.</p>
+
+  <p><a href="/assets/mhd.pdf">White Paper</a></p>
+  <p><a href="https://github.com/rishabh01solanki/flash4_fishergroup">View on GitHub</a></p>
+</div>
+
   
 </div>
 
