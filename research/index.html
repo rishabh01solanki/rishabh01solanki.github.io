@@ -54,6 +54,7 @@
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
   </script>
 
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>  
 
 </head>
@@ -184,6 +185,15 @@
     padding-right: 5px;
   }
 
+  @media only screen and (max-width: 600px) {
+    .equation-container {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow: hidden;
+      font-size: smaller;
+    }
+  }
+
 
 </style>
 
@@ -236,17 +246,23 @@
       <li><b>Stopword Removal</b>: Applied entropy-based measures to selectively remove non-contributive words.</li>
       <li><b>Stemming</b>: Employed Lancaster stemming algorithm, optimized for the specific corpus.</li>
       <li><b>Vectorization</b>: Transformed text into numerical vectors using TF-IDF, represented by:
-          \[
-          \text{TF-IDF} = \text{TF} \times \left(1 + \log\left(\frac{N}{1 + \text{DF}}\right)\right)
-          \]
+         <div class="equation-container">
+            \[
+              \text{TF-IDF} = \text{TF} \times \left(1 + \log\left(\frac{N}{1 + \text{DF}}\right)\right)
+            \]
+        </div>
+
       </li>
   </ul>
 
   <h6>Model Architecture and Development</h6>
   <p>Engineered a composite model combining Logistic Regression, Random Forest, Naive Bayes, and SVM with ensemble learning techniques. Utilized stochastic gradient descent for optimization, with a custom loss function defined by:</p>
+  
+  <div class="equation-container">
   \[
   \mathcal{L}(\theta) = -\sum y \log(\hat{y}) + (1-y)\log(1-\hat{y}) + \lambda\|\theta\|_2^2
   \]
+  </div>
 
   <h6>Training, Hyperparameter Tuning, and Evaluation</h6>
   <p>Implemented a robust training regimen with cross-validation and GridSearch for hyperparameter tuning. The models were evaluated using precision, recall, F1-score, and ROC-AUC metric, ensuring a well-balanced classification performance.</p>
@@ -295,13 +311,18 @@
 
     <h6>Modeling Strategy and Methodology</h6>
     <p>The SVR method's formulation involved optimizing a loss function subject to constraints, mathematically expressed as:</p>
+    <div class="equation-container">
     \[
     \min_{\mathbf{w}, b, \xi} \frac{1}{2}\|\mathbf{w}\|^2 + C\sum_{i=1}^N \xi_i, \quad \text{subject to } y_i - \langle\mathbf{w}, \mathbf{x}_i\rangle - b \leq \epsilon + \xi_i
     \]
+    </div>
+
     <p>The RBF kernel allows the model to learn complex nonlinear relationships, represented by:</p>
+    <div class="equation-container">
     \[
     k(\mathbf{x}_i, \mathbf{x}_j) = \exp\left(-\gamma \|\mathbf{x}_i - \mathbf{x}_j\|^2\right)
     \]
+    </div>
     <p>Bootstrapping introduced robustness, with 1000 samples generated from the training data to estimate predictive intervals, encapsulating 95% of future stock prices.</p>
 
     <h6>Results and Insights</h6>
@@ -377,11 +398,13 @@
   <p>The simulation relies on the MHD equations, encompassing the conservation of mass, momentum, energy, and magnetic induction. These equations are expressed as:</p>
 
   <div style="text-align: center;">
+    <div class="equation-container">
     <p>\(\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0\) <span style="float: right;">(Conservation of Mass)</span></p>
     <p>\(\frac{\partial \rho \mathbf{v}}{\partial t} + \nabla \cdot (\rho \mathbf{v} \mathbf{v} - \mathbf{B} \mathbf{B}) + \nabla p^* = 0\) <span style="float: right;">(Momentum Conservation)</span></p>
     <p>\(\frac{\partial E}{\partial t} + \nabla \cdot [(E + p^*) \mathbf{v} - \mathbf{B}(\mathbf{v} \cdot \mathbf{B})] = 0\) <span style="float: right;">(Energy Conservation)</span></p>
     <p>\(\frac{\partial \mathbf{B}}{\partial t} = \nabla \times (\mathbf{v} \times \mathbf{B})\) <span style="float: right;">(Magnetic Induction)</span></p>
-</div>
+  </div>
+  </div>
 
   <p>Here, \(\rho\) is the density, \(\mathbf{v}\) the velocity, \(\mathbf{B}\) the magnetic field, and \(p^*\) the total pressure including magnetic contributions.</p>
 
