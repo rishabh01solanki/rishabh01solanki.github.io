@@ -212,9 +212,9 @@
           <p>Sentiment Analysis on Movie Reviews using NLP and Machine Learning</p>
       </div>
 
-      <div class="grid-item" onclick="showProjectDetails('projectSVM')">
-        <img src="/assets/svr_stock.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
-        <p>Forecasting Stock prices using Support Vector Regression</p>
+      <div class="grid-item" onclick="showProjectDetails('projectRNN')">
+        <img src="/assets/forex3d.png" alt="SVR" style="cursor: pointer; width: 100%; height: auto;">
+        <p>Forecasting Stock prices using RNN</p>
       </div>
 
     <div class="grid-item" onclick="showProjectDetails('project1')">
@@ -294,42 +294,52 @@
 
 
 
-<div class="project-detail" id="projectSVM" style="text-align: left;">
+<div class="project-detail" id="projectRNN" style="text-align: left;">
   <button style="align-items: flex-end;" class="back-button" onclick="hideProjectDetails()">Go Back</button>
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-      <h4>Stock Price Forecasting: A Quantitative Approach Using Support Vector Regression (SVR) and Bootstrap Resampling</h4>
+      <h4>Forex Price Forecasting: An Advanced Approach Using Recurrent Neural Networks (RNNs)</h4>
   </div>
 
   <div style="display: flex; flex-direction: column; align-items: center;">
       <div style="display: flex; justify-content: space-between;">
           <div>
-              <img src="/assets/svr_stock.png" alt="Stock Price Forecast" style="width: 100%; height: auto;"/>
+              <img src="/assets/forex_euro_us.png" alt="Forex Price Forecast" style="width: 100%; height: auto;"/>
           </div>
       </div>
-      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Ensemble Prediction of Stock Prices using SVR with RBF Kernel and Bootstrapping, Demonstrating Statistical Rigor and Predictive Accuracy.</em></figcaption>
+      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Time-Series Prediction of Forex Prices using Recurrent Neural Networks, Showcasing Predictive Accuracy and Trend Insights.</em></figcaption>
   </div>
 
     <h6>Introduction and Objective</h6>
-    <p>Addressing the complex challenge of stock price forecasting, this project leverages the mathematical elegance of Support Vector Regression (SVR) with the Radial Basis Function (RBF) kernel and the statistical rigor of bootstrap resampling.</p>
+    <p>The goal of this project is to predict future foreign exchange rates using Recurrent Neural Networks (RNNs), a type of deep learning model well-suited for sequence prediction tasks.</p>
 
     <h6>Modeling Strategy and Methodology</h6>
-    <p>The SVR method's formulation involved optimizing a loss function subject to constraints, mathematically expressed as:</p>
+    <p>The RNN architecture is designed to capture temporal dependencies in the data. The model is formulated as:</p>
     <div class="equation-container">
     \[
-    \min_{\mathbf{w}, b, \xi} \frac{1}{2}\|\mathbf{w}\|^2 + C\sum_{i=1}^N \xi_i, \quad \text{subject to } y_i - \langle\mathbf{w}, \mathbf{x}_i\rangle - b \leq \epsilon + \xi_i
+    h_t = \sigma(W_{hh} h_{t-1} + W_{xh} x_t)
+    \]
+    \[
+    y_t = W_{hy} h_t
     \]
     </div>
-
-    <p>The RBF kernel allows the model to learn complex nonlinear relationships, represented by:</p>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; justify-content: space-between;">
+          <div>
+              <img src="/assets/forex3d.png" alt="Forex Price Forecast" style="width: 100%; height: auto;"/>
+          </div>
+      </div>
+      <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Time-Series Prediction of Forex Prices using Recurrent Neural Networks, Showcasing Predictive Accuracy and Trend Insights.</em></figcaption>
+  </div>
+    <p>Here, \( h_t \) is the hidden state at time \( t \), \( x_t \) is the input at time \( t \), \( W \) represents weight matrices, and \( \sigma \) is the activation function.</p>
+    <p>Data preprocessing includes Min-Max scaling, expressed mathematically as:</p>
     <div class="equation-container">
     \[
-    k(\mathbf{x}_i, \mathbf{x}_j) = \exp\left(-\gamma \|\mathbf{x}_i - \mathbf{x}_j\|^2\right)
+    x_{\text{scaled}} = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
     \]
     </div>
-    <p>Bootstrapping introduced robustness, with 1000 samples generated from the training data to estimate predictive intervals, encapsulating 95% of future stock prices.</p>
 
     <h6>Results and Insights</h6>
-    <p>The model demonstrated impressive predictive accuracy, with tight prediction intervals showcasing the model's confidence in forecasts. By integrating state-of-the-art machine learning with statistical techniques, the project illustrates a robust, data-driven approach to quantitative finance.</p>
+    <p>The model demonstrated robust performance in predicting forex price movements. The predicted and actual prices closely followed each other, validating the model's accuracy. The use of an interactive Plotly graph allowed for an in-depth analysis of model predictions.</p>
 
     <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
 </div>
