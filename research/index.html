@@ -35,8 +35,6 @@
       gtag('config', 'G-HBVJGEV8DR');
     </script>
 
-
-
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
                                  <link rel="shortcut icon" href="/public/favicon.ico">
@@ -53,9 +51,6 @@
   <script type="text/javascript" async
           src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
   </script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>  
 
 </head>
 
@@ -122,9 +117,6 @@
     </script>
     
   <style>
-  
-
-
   .content-container {
       margin: 20 auto;
       padding: 10 20px;
@@ -161,6 +153,14 @@
       border-radius: 20px;
   }
 
+  .grid-item .portrait-image {
+    width: 100%;    /* Take the full width of the container */
+    height: 33%;   /* Take the full height of the container */
+    object-fit: cover; /* Crop the image to cover both the width and height */
+    border-radius: 20px; /* Optional: if you want to keep rounded corners */
+    cursor: pointer; /* Keeps the pointer cursor for the image */
+  }
+
   .project-detail {
       display: none;
       text-align: center;
@@ -193,20 +193,38 @@
     font-size: 16px;
     white-space: normal;
   }
+
+  #pdf-container {
+    width: 100%;
+    max-height: 500px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+  }
+
+  #pdf-render {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    cursor: grab;
+  }
+
 }
-
-  
-
-
 </style>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
 
 
   <h1>Projects</h1>
   <div class="grid" id="project-list">
       <!-- Grid items here -->
+
+      <!-- New grid item for PixeLearner -->
+      <div class="grid-item" onclick="showProjectDetails('projectPixeLearner')">
+      <img src="/assets/pix.gif" alt="PixeLearner Project" style="cursor: pointer; width:100%; height: auto; ">
+      <p>PixeLearner: A Personalized ML-Powered App</p>
+      </div>
+
       <div class="grid-item" onclick="showProjectDetails('projectML')">
           <img src="/assets/roc.png" alt="Machine Learning Project" style="cursor: pointer; width: 100%; height: auto;">
           <p>Sentiment Analysis on Movie Reviews using NLP and Machine Learning</p>
@@ -228,6 +246,61 @@
   </div>
 
       <!-- Project details -->
+
+
+<!-- PixeLearner project details -->
+<div class="project-detail" id="projectPixeLearner" style="text-align: left;">
+  <button class="back-button" onclick="hideProjectDetails()">Go Back</button>
+  <div style="margin-top: 10px;">
+      <h4>PixeLearner: Merging Vision with Voice Recognition</h4>
+  </div>
+  
+  <h6>Introduction</h6>
+  <p>
+      PixeLearner was conceptualized with the primary intention of seamlessly integrating vision-based machine learning with the intricacies of natural language processing. The objective was clear - create a tool that offers a natural way to recognize and label individuals, thereby enhancing personal interactions.
+  </p>
+
+<!-- The section where you want to show your gif with drag and zoom starts here -->
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <div style="display: flex; justify-content: space-between;">
+      <div>
+          <img src="/assets/pixel_map.png" alt="Forex Price Forecast" style="width: 130%; height: auto;"/>
+      </div>
+  </div>
+  <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Architecture showing how the app works.</em></figcaption>
+</div>
+<!-- The section where you want to show your gif with drag and zoom ends here -->
+
+
+
+  <h6>The Vision</h6>
+  <p>
+      The project emerged from a need I identified in today's fast-paced world: the art of recognizing and remembering. Beyond its immediate utility, I envisioned PixeLearner's potential in several critical areas:
+  </p>
+  <ul>
+      <li><b>Security Enhancement:</b> Real-time recognition at public events, or even in controlled environments, offering an added layer of safety.</li>
+      <li><b>Counteracting Human Trafficking:</b> The capability to potentially identify victims and assist in their recovery.</li>
+      <li><b>Social Media Evolution:</b> Smart tagging and enhanced photo recognition.</li>
+      <li><b>Creating Smart Environments:</b> Enabling spaces to interact more intelligently with its occupants.</li>
+  </ul>
+
+  <h6>Technical Overview</h6>
+  <ul>
+      <li><b>Camera Integration:</b> Leveraged AV Foundation for accurate and prompt visual data capture.</li>
+      <li><b>Machine Learning Model:</b> Employed the MobileNetV2 architecture for its efficiency in processing visual data.</li>
+      <li><b>Voice Recognition:</b> Incorporated state-of-the-art voice-to-text methods for capturing voice inputs.</li>
+      <li><b>NLP with BERT:</b> Utilized BERT for advanced language processing, ensuring the application understands context as effectively as content.</li>
+  </ul>
+
+  <h6>More than just an app!</h6>
+  <p>
+      PixeLearner is more than just a project; it represents a step forward in how we interact with our environment. It's a testament to what can be achieved when vision and voice come together, and I'm excited about the path ahead. I am thinking to send for App Store review. But before that there are a few minor things that need to polished. Thanks for reading and you can check the code on my github.
+  </p>
+
+  <p><a href="https://github.com/rishabh01solanki/PixeLearner">View this project on GitHub</a></p>
+</div>
+
+
 
 <!-- Add this as a new project detail section -->
 <div class="project-detail" id="projectML" style="text-align: left;">
