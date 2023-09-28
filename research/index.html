@@ -301,25 +301,6 @@
     <li>Continuous Model Refinement: PixeLearner's hallmark is its adaptability. The model undergoes perpetual enhancement by assimilating new labels and recognitions, ensuring heightened accuracy over time.</li>
 </ul>
 
-<h6>Technical Components and Insights</h6>
-<dl>
-    <dt>Camera Interface:</dt>
-    <dd>Deploys AV Foundation for real-time video capture. Each frame, prior to inference, undergoes necessary transformations such as squaring and resizing. For user-centric visual feedback, facial coordinates are overlaid on a preview layer.</dd>
-    
-    <dt>NLP with BERT:</dt>
-    <dd>Textual data is segmented via BERT into recognizable tokens. For tokens beyond BERT's scope, Apple's NLTagger provides further textual breakdown, ensuring comprehensive processing.</dd>
-    
-    <dt>Vocal-to-Text Processing:</dt>
-    <dd>A dynamic class manages recording, contingent on user engagement, guaranteeing comprehensive auditory capture. This leads to a precise voice-to-text translation, enhancing user interaction.</dd>
-    
-    <dt>Inference Protocols:</dt>
-    <dd>Each pixel buffer is rigorously analyzed, yielding a corresponding label accompanied by a confidence metric. The system's error-handling mechanism ensures user interactions remain uninterrupted, even during unforeseen complications.</dd>
-    
-    <dt>Model Upgradation:</dt>
-    <dd>A dedicated module assimilates fresh training data. Upon model enhancement, the new iteration is assimilated into the workflow, equipping the application with evolved capabilities.</dd>
-</dl>
-
-
   <h6>More than just an app!</h6>
   <p>
       PixeLearner is more than just a project; it represents a step forward in how we interact with our environment. It's a testament to what can be achieved when vision and voice come together, and I'm excited about the path ahead. I am thinking to send the app for review. But before that there are a few minor things that need to polished. Thanks for reading and you can check the code on my github.
