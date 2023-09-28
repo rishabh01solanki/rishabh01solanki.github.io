@@ -254,8 +254,6 @@
   <div style="margin-top: 10px;">
       <h4>PixeLearner: Merging Vision with Voice Recognition</h4>
   </div>
-  
-  <h6>Introduction</h6>
   <p>
       PixeLearner was conceptualized with the primary intention of seamlessly integrating vision-based machine learning with the intricacies of natural language processing. The objective was clear - create a tool that offers a natural way to recognize and label individuals, thereby enhancing personal interactions.
   </p>
@@ -264,7 +262,7 @@
 <div style="display: flex; flex-direction: column; align-items: center;">
   <div style="display: flex; justify-content: space-between;">
       <div>
-          <img src="/assets/pixel_map.png" alt="Forex Price Forecast" style="width: 130%; height: auto;"/>
+          <img src="/assets/pixel_map.png" alt="Forex Price Forecast" style="width: 100%; height: auto;"/>
       </div>
   </div>
   <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>Architecture showing how the app works.</em></figcaption>
@@ -273,28 +271,58 @@
 
 
 
-  <h6>The Vision</h6>
-  <p>
-      The project emerged from a need I identified in today's fast-paced world: the art of recognizing and remembering. Beyond its immediate utility, I envisioned PixeLearner's potential in several critical areas:
-  </p>
-  <ul>
-      <li><b>Security Enhancement:</b> Real-time recognition at public events, or even in controlled environments, offering an added layer of safety.</li>
-      <li><b>Counteracting Human Trafficking:</b> The capability to potentially identify victims and assist in their recovery.</li>
-      <li><b>Social Media Evolution:</b> Smart tagging and enhanced photo recognition.</li>
-      <li><b>Creating Smart Environments:</b> Enabling spaces to interact more intelligently with its occupants.</li>
-  </ul>
+<h6>Objective</h6>
+<p>
+    The primary aim of PixeLearner is to seamlessly emulate human interactions - to spot familiar faces and instantly recall associated names, just as one would during a friendly meetup.
+</p>
 
-  <h6>Technical Overview</h6>
-  <ul>
-      <li><b>Camera Integration:</b> Leveraged AV Foundation for accurate and prompt visual data capture.</li>
-      <li><b>Machine Learning Model:</b> Employed the MobileNetV2 architecture for its efficiency in processing visual data.</li>
-      <li><b>Voice Recognition:</b> Incorporated state-of-the-art voice-to-text methods for capturing voice inputs.</li>
-      <li><b>NLP with BERT:</b> Utilized BERT for advanced language processing, ensuring the application understands context as effectively as content.</li>
-  </ul>
+<h6>Prime Use Cases</h6>
+<ol>
+    <li>Identification of close acquaintances, colleagues, or family members from an ongoing camera feed.</li>
+    <li>Efficiently linking names to faces in an almost organic manner, fostering an environment of familiarity.</li>
+    <li>Real-time model enhancement with each new introduction, making it an evolving tool.</li>
+    <li>Associating faces with previously remembered data and contexts.</li>
+</ol>
+
+<h6>The Edge PixeLearner Offers</h6>
+<ul>
+    <li>Guarantees user data sanctity with on-device processing.</li>
+    <li>Sets the stage for extensive adaptations in diverse application domains.</li>
+    <li>Immerses budding developers into a world of ML and NLP integration, offering a holistic learning curve.</li>
+</ul>
+
+<h6>Architectural Workflow of PixeLearner</h6>
+<ul>
+    <li>Camera Integration: Leveraging the AV Foundation, the system offers continuous acquisition and refinement of live video streams. This ensures optimized resource allocation and preemptive measures against memory inefficiencies.</li>
+    <li>Model Analysis: Each frame is subjected to in-depth processing via our custom CNN model, specifically, the MobileNetV2 architecture. This strategy yields unique facial feature embeddings, essential for accurate recognition.</li>
+    <li>Audio-Text Transformation: A sophisticated functionality permits users to provide vocal labels. These audio inputs are subsequently transcribed into textual data through our advanced speech-to-text subsystem.</li>
+    <li>BERT’s NLP Framework: The system subjects the textual data to BERT, an industry-leading NLP solution. BERT's capabilities ensure accurate tokenization and normalization of inputs. For complex tokens not inherent in BERT's lexicon, integration with Apple's NLTagger provides additional segmentation and classification.</li>
+    <li>Facial & Linguistic Synchronization: The interplay between facial embeddings, derived from MobileNetV2, and labels processed via BERT ensures real-time associations between recognized faces and contextual labels.</li>
+    <li>Continuous Model Refinement: PixeLearner's hallmark is its adaptability. The model undergoes perpetual enhancement by assimilating new labels and recognitions, ensuring heightened accuracy over time.</li>
+</ul>
+
+<h6>Technical Components and Insights</h6>
+<dl>
+    <dt>Camera Interface:</dt>
+    <dd>Deploys AV Foundation for real-time video capture. Each frame, prior to inference, undergoes necessary transformations such as squaring and resizing. For user-centric visual feedback, facial coordinates are overlaid on a preview layer.</dd>
+    
+    <dt>NLP with BERT:</dt>
+    <dd>Textual data is segmented via BERT into recognizable tokens. For tokens beyond BERT's scope, Apple's NLTagger provides further textual breakdown, ensuring comprehensive processing.</dd>
+    
+    <dt>Vocal-to-Text Processing:</dt>
+    <dd>A dynamic class manages recording, contingent on user engagement, guaranteeing comprehensive auditory capture. This leads to a precise voice-to-text translation, enhancing user interaction.</dd>
+    
+    <dt>Inference Protocols:</dt>
+    <dd>Each pixel buffer is rigorously analyzed, yielding a corresponding label accompanied by a confidence metric. The system's error-handling mechanism ensures user interactions remain uninterrupted, even during unforeseen complications.</dd>
+    
+    <dt>Model Upgradation:</dt>
+    <dd>A dedicated module assimilates fresh training data. Upon model enhancement, the new iteration is assimilated into the workflow, equipping the application with evolved capabilities.</dd>
+</dl>
+
 
   <h6>More than just an app!</h6>
   <p>
-      PixeLearner is more than just a project; it represents a step forward in how we interact with our environment. It's a testament to what can be achieved when vision and voice come together, and I'm excited about the path ahead. I am thinking to send for App Store review. But before that there are a few minor things that need to polished. Thanks for reading and you can check the code on my github.
+      PixeLearner is more than just a project; it represents a step forward in how we interact with our environment. It's a testament to what can be achieved when vision and voice come together, and I'm excited about the path ahead. I am thinking to send the app for review. But before that there are a few minor things that need to polished. Thanks for reading and you can check the code on my github.
   </p>
 
   <p><a href="https://github.com/rishabh01solanki/PixeLearner">View this project on GitHub</a></p>
