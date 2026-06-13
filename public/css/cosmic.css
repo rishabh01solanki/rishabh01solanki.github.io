@@ -516,8 +516,28 @@ main { position: relative; z-index: 2; }
 /* ---- Footer / contact ---------------------------------------------------- */
 .site-footer {
   border-top: 1px solid var(--surface-border);
-  padding: 3.5rem 0 2.5rem;
+  padding: 4.5rem 0 2.5rem;
   text-align: center;
+}
+
+.contact-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 0.6rem;
+}
+
+/* email is plain text, written with [at] on purpose — keep it unlinked so bots can't scrape it */
+.contact-email {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3.5vw, 2.1rem);
+  font-weight: 500;
+  color: var(--text-hi);
+  margin: 0 0 2.2rem;
+  user-select: all;
+  word-break: break-word;
 }
 .footer-links { display: flex; gap: 1.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem; }
 .footer-fine { color: var(--text-muted); font-size: 0.85rem; }
