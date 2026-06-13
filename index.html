@@ -1,133 +1,307 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-
-
-
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Homepage of Rishabh Solanki">
   <meta name="keywords" content="Rishabh Solanki, Data science, LLMs, Machine leanring, AWS, CNN, RNN, NLP, Physics">
   <meta name="author" content="Rishabh Solanki">
+  <title>Rishabh &middot; Homepage</title>
 
-  
-  <title>
-    
-      Rishabh &middot; Homepage
-    
-  </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/fade_in.css">
-  <link rel="stylesheet" href="/public/css/animations.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-
-  <!---JS-->
-  <script src="/javascript/type.js"></script>
-  <script src="/javascript/scroll-animations.js"></script>
-
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HBVJGEV8DR');
   </script>
-    
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
 
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-
-  <!-- MathJax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    messageStyle: "none",
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-  </script>
-
+  <script defer src="/javascript/cosmic.js"></script>
 </head>
+<body id="top">
+  <a class="skip-link" href="#about">Skip to content</a>
 
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
 
-
-  <body>
-
-    <div class="sidebar animated">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>Discover</h1>
-      <p class="lead"></p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item active">
-        <a href="/">Home</a>
-      </li>
-
-      <li class="sidebar-nav-item">
-        <a href="/research/">Projects</a>
-     </li>
-              
-       <li class="sidebar-nav-item">
-        <a href="/cv/">Resume</a>
-       </li>
-
-
-       <li class="sidebar-nav-item">
-          <a href="/teaching/">Teaching</a>
-       </li>
-
-       <li class="sidebar-nav-item">
-        <a href="/About me/">About Me</a>
-        </li>
-
-      
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
+  </nav>
 
-    <p><br>
-      &copy; 2023. All rights reserved.
-    </p>
-  </div>
-</div>
+  <main>
+    <!-- ================= HERO ================= -->
+    <header class="hero">
+      <p class="hero-overline" data-stage style="--stage:0">Data Scientist<span class="sep">&#10022;</span>Machine Learning<span class="sep">&#10022;</span>Astrophysics</p>
+      <h1 class="hero-name" data-typed="Rishabh Solanki" data-stage style="--stage:1"><span class="typed-target">Rishabh Solanki</span><span class="caret" aria-hidden="true"></span></h1>
+      <p class="hero-tagline" data-stage style="--stage:2">Stars and Stories</p>
+      <div class="hero-actions" data-stage style="--stage:3">
+        <a class="btn btn-primary" href="/#projects">Explore projects</a>
+        <a class="btn btn-ghost" href="/#contact">Get in touch</a>
+      </div>
+      <a class="scroll-cue" href="/#about" aria-label="Scroll to about section">&#8595;</a>
+    </header>
 
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">01</span>
+          <h2 class="section-title">About</h2>
+        </div>
+        <div class="about-grid">
+          <div data-reveal>
+            <p class="about-lead">
+              I'm a data scientist at Mammoth Holdings, using machine learning and AI to solve real-world business problems.
+              Before this, I was doing research in astrophysics, working on simulations of stellar mergers involving white dwarfs.
+              I'm into hiking, sunsets, and mountains. I often find myself
+              wondering if the universe is deterministic or not and if there's more to the story.
+            </p>
+            <figure class="glass portrait-card" style="margin-top: 1.5rem;">
+              <img src="/assets/mountains.jpg" alt="hometown" loading="lazy" decoding="async">
+              <figcaption>30.4114&deg; N, 78.2885&deg; E</figcaption>
+            </figure>
+          </div>
+          <figure class="glass portrait-card" data-reveal style="--reveal-delay:2">
+            <img src="/assets/Rishabh.jpeg" alt="Photo of Rishabh" decoding="async">
+          </figure>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">02</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <div class="project-grid">
+          <a class="glass project-card" href="/projects/pixelearner.html" data-reveal>
+            <div class="media"><img src="/assets/pix.gif" alt="PixeLearner Project" loading="lazy" decoding="async"></div>
+            <div class="body"><p class="title">PixeLearner: A Personalized ML-Powered App</p><span class="arrow">&#8594;</span></div>
+          </a>
+          <a class="glass project-card" href="/projects/stellar-modeling.html" data-reveal style="--reveal-delay:1">
+            <div class="media"><img src="/assets/mhd_dens.jpeg" alt="Advanced Stellar Modeling" loading="lazy" decoding="async"></div>
+            <div class="body"><p class="title">Advanced Stellar Modeling</p><span class="arrow">&#8594;</span></div>
+          </a>
+          <a class="glass project-card" href="/projects/sentiment-analysis.html" data-reveal style="--reveal-delay:2">
+            <div class="media"><img src="/assets/roc.png" alt="Machine Learning Project" loading="lazy" decoding="async"></div>
+            <div class="body"><p class="title">Sentiment Analysis on Movie Reviews using NLP and Machine Learning</p><span class="arrow">&#8594;</span></div>
+          </a>
+          <a class="glass project-card" href="/projects/forex-rnn.html" data-reveal style="--reveal-delay:3">
+            <div class="media"><img src="/assets/forex3d.png" alt="SVR" loading="lazy" decoding="async"></div>
+            <div class="body"><p class="title">Forecasting Stock prices using RNN</p><span class="arrow">&#8594;</span></div>
+          </a>
+          <a class="glass project-card" href="/projects/energydash.html" data-reveal style="--reveal-delay:4">
+            <div class="media"><img src="/assets/consmptn_dec.gif" alt="EnergyDash" loading="lazy" decoding="async"></div>
+            <div class="body"><p class="title">EnergyDash</p><span class="arrow">&#8594;</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">03</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
 
-<div class="content container"> 
-      <h1 id="Rishabh-Solanki"></h1>
-     <script>typeText("Rishabh Solanki");</script> 
+        <div class="glass panel" data-reveal>
+          <p class="panel-kicker">Career Summary</p>
+          <h6 style="font-size: 1rem; margin-top: 0;">Data Scientist &bull; Machine Learning Engineer &bull; Computational Astrophysicist</h6>
+          <ul>
+            <li> <strong>A data-driven professional</strong> with over 3 years of hands-on experience in data science and machine learning (Scikit-learn and TensorFlow), showcasing proven results in modeling, and scalable deployments.</li>
+            <li><strong>A dynamic data scientist</strong> with broad expertise in data engineering and AWS, skilled in transforming data into valuable insights and solutions using advanced mathematical modeling.</li>
+            <li><strong>A specialized machine learning engineer</strong>, proficient in classification, regression, and deep learning, leveraging a strong scientific background to excel in complex projects.</li>
+          </ul>
+        </div>
 
-     
+        <div class="exp-grid">
+          <div class="glass panel" data-reveal>
+            <p class="panel-kicker">Areas of Expertise</p>
+            <ul>
+              <li><b>Programming Languages:</b> Python, Java, SQL</li>
+              <li><b>Libraries:</b> Numpy, Pandas, Scikit-Learn, Tensorflow, Keras, XGBoost</li>
+              <li><b>Machine Learning Techniques:</b>
+                <ul>
+                  <li>Natural Language Processing</li>
+                  <li>Random Forest</li>
+                  <li>Classification, Regression, SVM</li>
+                </ul>
+              </li>
+              <li><b>High-Performance Computing:</b> MPI, OpenMP, Slurm</li>
+              <li><b>Quantitative Analysis:</b> Mathematical Modeling, Statistical Analysis</li>
+              <li><b>Data Visualization Libraries:</b> Matplotlib, Seaborn, Plotly</li>
+              <li><b>SDLC:</b> Jira, Git, Agile methodologies</li>
+              <li><b>Big Data Tools:</b> Apache Spark</li>
+              <li><b>Cloud Services:</b> AWS (Glue, Lambda, SageMaker, Kinesis), Docker</li>
+            </ul>
+          </div>
 
+          <div data-reveal style="--reveal-delay:1">
+            <div class="glass panel">
+              <p class="panel-kicker">Certifications</p>
+              <div class="cert-row">
+                <a href="https://www.credly.com/badges/eea813b9-4235-47bb-9371-8b21befe06ea/public_url">AWS Certified Machine Learning &ndash; Specialty</a>
+                <small>July 2023</small>
+              </div>
+              <div class="cert-row">
+                <a href="https://www.credly.com/badges/0b7c6efc-3729-410b-b36b-8b0248ed3ed3/public_url">AWS Certified Cloud Practitioner</a>
+                <small>June 2023</small>
+              </div>
+            </div>
 
-<p class="slide-in">
-  <img src="/assets/Rishabh.jpeg" style="width:200px; height: auto; float:left; margin:0.5em 1em 0 0;" alt="Photo of Rishabh" />
-</p>
+            <div class="glass panel" style="margin-top: 1.5rem;" id="education">
+              <p class="panel-kicker">Education</p>
+              <ul class="timeline">
+                <li>
+                  <span class="when">2023</span><br>
+                  <b>University of Massachusetts Dartmouth</b>, Master's in Physics
+                </li>
+                <li>
+                  <span class="when">2018</span><br>
+                  <b>University of Petroleum and Energy Studies</b>, Bachelor's in Aerospace Engineering
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ================= TEACHING & COMPUTING ================= -->
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">04</span>
+          <h2 class="section-title">Teaching &amp; Computing</h2>
+        </div>
+        <div class="exp-grid" style="margin-top: 0;">
+          <div class="glass panel" data-reveal>
+            <p class="panel-kicker">Teaching</p>
+            <p>
+              As a Graduate Teaching Assistant at UMass Dartmouth, I gained valuable experience while
+              working with undergraduate students. Being a TA was both challenging and rewarding, as
+              it allowed me to help students learn and grow while also developing my own teaching skills.
+            </p>
+            <p>
+              I led discussion sections and lab sessions, graded assignments
+              and exams, and provided additional support to students as needed. I also had the opportunity
+              to work closely with the course instructor to plan and deliver lectures, create teaching
+              materials, and evaluate student learning.
+            </p>
+            <p>
+              I have taught the following courses at UMass Dartmouth:
+            </p>
+            <ul>
+              <li><a href="https://catalog.umassd.edu/preview_course_nopop.php?catoid=66&coid=226201">PHY 115 - Intro Classical Physics</a> Fall 2021 and Spring 2022 <i>Recitation instructor</i>  </li>
+              <li><a href="https://catalog.umassd.edu/preview_course_nopop.php?catoid=23&coid=67000">PHY 113 - Classical Physics I</a> Fall 2021 and Spring 2022 <i>Lab instructor</i>  </li>
+              <li><a href="https://catalog.umassd.edu/preview_course_nopop.php?catoid=53&coid=191573">PHY 111 - Physics for Science and Engineering I</a> Fall 2021 <i>Recitation instructor</i> </li>
+              <li><a href="https://catalog.umassd.edu/preview_course_nopop.php?catoid=62&coid=213884">PHY 103 - General Physics Lab I</a> Fall 2021</li>
+            </ul>
+          </div>
 
-<p class="fade-in" style="text-align:left;line-height: 1.7;">
- I'm a data scientist at Mammoth Holdings, using machine learning and AI to solve real-world business problems. 
-  Before this, I was doing research in astrophysics, working on simulations of stellar mergers involving white dwarfs. 
-  I'm into hiking, sunsets, and mountains. I often find myself 
-  wondering if the universe is deterministic or not and if there's more to the story.
-</p>
+          <div class="glass panel" data-reveal style="--reveal-delay:1" id="computing">
+            <p class="panel-kicker">Computing</p>
+            <p>
+              With a unique combination of a strong background in astrophysics and a robust foundation
+              in computer science, I have developed a diverse skill set that includes proficiency in several
+              programming languages, including Python, Java, and Fortran. I have a keen understanding of
+              machine learning principles and a deep familiarity with high-performance computing (HPC),
+              including experience with GPU-accelerated workflows and parallel computing techniques.
+            </p>
+            <p>
+              In my research work, I utilize the <a href="https://flash.rochester.edu/site/flashcode/">FLASH</a> code to simulate the mergers of white dwarf binaries,
+              an application that not only showcases my computational abilities but also the depth of my
+              understanding of astrophysical phenomena. I have further enhanced the performance of these
+              simulations by applying warp-level programming and CUDA libraries on NVIDIA GPUs, leading
+              to more efficient and larger scale simulations.
+            </p>
+            <p>
+              I execute these FLASH codes and post-process data on the <a href="https://www.tacc.utexas.edu/systems/stampede2#:~:text=TACC's%20Stampede2%20is%20the%20flagship,resources%2C%20data%2C%20and%20expertise.">Stampede2</a> supercomputer,
+              the flagship of the Extreme Science and Engineering Discovery Environment (XSEDE).
+              Post-processing involves the analysis and manipulation of the data produced by the
+              simulations to extract meaningful insights and results. For this purpose, I employ the
+              <a href="https://pypi.org/project/yt/">yt</a> tool, a powerful open-source software package for analyzing and visualizing scientific data.
+            </p>
+            <p>
+              Additionally, I've streamlined workflows and enhanced operational efficiency by leveraging
+              Linux command line tools and Git for version control and collaboration. This blend of
+              computational and collaborative skills has proven instrumental in my work, and I'm excited
+              to continue applying and expanding these skills in new computational challenges.
+            </p>
+            <p>
+              Outside of my professional endeavors, I am also a keen learner and enjoy tackling new projects
+              in my free time. One such project is the development of a deep neural network (DNN) for
+              classifying Type Ia supernovae using spectral data from the
+              <a href="http://heracles.astro.berkeley.edu/sndb/info#DownloadDatasets(BSNIP,LOSS,deepSIP)">Berkeley Supernova Ia Program (BSNIP)</a> and
+              <a href="https://gea.esac.esa.int/archive/">GAIA</a> archive.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <!-- ================= WRITING ================= -->
+    <section class="section" id="writing">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-index">05</span>
+          <h2 class="section-title">Writing</h2>
+        </div>
+        <p data-reveal>Exploring the Frontiers of Science: Some Insights on My Research and Interests <span style="color: var(--text-muted);">&mdash; 2021-present</span></p>
+        <div class="writing-list" style="margin-top: 1.5rem;">
+          <a class="glass writing-card" href="/blog/MHD.html" data-reveal>
+            <span class="num">I</span>
+            <p class="title">MHD and Accretion</p>
+          </a>
+          <a class="glass writing-card" href="/blog/dnn.html" data-reveal style="--reveal-delay:1">
+            <span class="num">II</span>
+            <p class="title">Inside the mind of a Neural Network</p>
+          </a>
+          <a class="glass writing-card" href="/blog/companion.html" data-reveal style="--reveal-delay:2">
+            <span class="num">III</span>
+            <p class="title">Evolution of surviving companions in Type Ia Supernova Remenants</p>
+          </a>
+          <a class="glass writing-card" href="/blog/Progenitor.html" data-reveal style="--reveal-delay:3">
+            <span class="num">IV</span>
+            <p class="title">Type Ia Supernovae and their progenitor mechanisms</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / FOOTER ================= -->
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <div class="footer-links" data-reveal>
+          <a href="https://github.com/rishabh01solanki">GitHub</a>
+          <a href="/canvas/canvas.html">Canvas</a>
+          <a href="/blog/index.html">Blog archive</a>
+        </div>
+        <p class="footer-fine">&copy; 2023. All rights reserved.</p>
+      </div>
+    </footer>
+  </main>
 </body>
-
 </html>

@@ -1,157 +1,101 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <meta name="description" content="Homepage of Rishabh Solanki">
-  <meta name="keywords" content="Rishabh, Solanki, Astrophysics, Astronomy, Physics">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evolution of surviving companions in Type Ia Supernova Remenants — Rishabh Solanki">
   <meta name="author" content="Rishabh Solanki">
-  
-  <title>
-    
-      Blog &middot; Rishabh
-    
-  </title>
+  <title>Rishabh &middot; Surviving companions in Type Ia SNRs</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="/public/css/animations.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
 
   <!-- MathJax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    messageStyle: "none",
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-  </script>
-  <script src="/javascript/scroll-animations.js"></script>
+  <script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] } };</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
 
+  <script defer src="/javascript/cosmic.js"></script>
 </head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
 
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>Rishabh</h1>
-      <p class="lead">Stars and Stories</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-        <a href="/">Home</a>
-      </li>
-
-      <li class="sidebar-nav-item">
-        <a href="/research/">Projects</a>
-     </li>
-        
-  
-       <li class="sidebar-nav-item">
-          <a href="/computing/">Computing</a>
-       </li>
-
-
-          
-       <li class="sidebar-nav-item">
-        <a href="/cv/">Resume</a>
-       </li>
-
-       <li class="sidebar-nav-item active">
-        <a href="/blog/">Blog</a>
-      </li>
-
-
-       <li class="sidebar-nav-item">
-          <a href="/teaching/">Teaching</a>
-       </li>
-          
-       <li class="sidebar-nav-item">
-        <a href="/About me/">About Me</a>
-     </li>
-          
-   
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
+  </nav>
 
-    <p><br>
-      &copy; 2023. All rights reserved.
-    </p>
-  </div>
-</div>
+  <main class="article-shell">
+    <a class="back-link" href="/blog/index.html">All writing</a>
+    <h1 class="article-title">Evolution of surviving companions in Type Ia Supernova Remenants</h1>
+    <p class="article-meta">March 31, 2022</p>
 
-<div class="content container">
-    <div class="page">
-  <h1 class="page-title">Evolution of surviving companions in Type Ia Supernova Remenants</h1>
-  <span class="post-date">March 31, 2022</span>
-  
-  <p> 
-    It has been a long search for a companion that can survive a supernova impact. And the search is 
-    still going on. These surviving companion objects are extremely hard to detect but with new data coming 
-    from the GAIA mission may provide some hope to find these objects.
- </p>
+    <article class="prose">
+      <p>
+        It has been a long search for a companion that can survive a supernova impact. And the search is
+        still going on. These surviving companion objects are extremely hard to detect but with new data coming
+        from the GAIA mission may provide some hope to find these objects.
+      </p>
 
- <p><figure>
-    <img src="/assets/red_bubble.png" alt="Supernova remenant 0509" style ="width: 600px; height: auto;"/></p>
-    <figcaption><em>SNR 0509-67.5 is a remnant from a supernova in the Large Magellanic Cloud, that is 160,000 light 
-        years away in the constellation Dorado. </em>(Image from nasa.gov)</figcaption>
-  </figure>
+      <figure>
+        <img src="/assets/red_bubble.png" alt="Supernova remenant 0509" style="width: 600px; height: auto;" loading="lazy" decoding="async"/>
+        <figcaption><em>SNR 0509-67.5 is a remnant from a supernova in the Large Magellanic Cloud, that is 160,000 light
+            years away in the constellation Dorado. </em>(Image from nasa.gov)</figcaption>
+      </figure>
 
-<p>
-  The evolution of surviving companions in Type Ia supernova remnants has been a topic of interest 
-  among astronomers for many years. Type Ia supernovae are thought to be the result of a white dwarf 
-  star accreting matter from a companion star until it reaches a critical mass and explodes. 
-  The nature of the companion star has been a subject of debate, with some studies suggesting 
-  that it is a red giant and others suggesting that it is a main sequence star.
+      <p>
+        The evolution of surviving companions in Type Ia supernova remnants has been a topic of interest
+        among astronomers for many years. Type Ia supernovae are thought to be the result of a white dwarf
+        star accreting matter from a companion star until it reaches a critical mass and explodes.
+        The nature of the companion star has been a subject of debate, with some studies suggesting
+        that it is a red giant and others suggesting that it is a main sequence star.
+      </p>
 
-</p>
+      <p>
+        Recent studies have provided evidence for the existence of surviving companions in Type Ia
+        supernova remnants. For example, in a study published in the Astrophysical Journal in 2012,
+        researchers used the Chandra X-ray Observatory to observe the Type Ia supernova remnant SNR
+        0509-67.5 in the Large Magellanic Cloud. They found evidence for the presence of a surviving
+        companion star, which they identified as a main sequence star with a mass of about 1.4 times
+        that of the Sun.
+      </p>
 
-<p>
-Recent studies have provided evidence for the existence of surviving companions in Type Ia 
-supernova remnants. For example, in a study published in the Astrophysical Journal in 2012, 
-researchers used the Chandra X-ray Observatory to observe the Type Ia supernova remnant SNR 
-0509-67.5 in the Large Magellanic Cloud. They found evidence for the presence of a surviving 
-companion star, which they identified as a main sequence star with a mass of about 1.4 times 
-that of the Sun.
-</p>
+      <p>
+        Another study, published in the same journal in 2014, used the same observatory to observe the
+        Type Ia supernova remnant SNR 0509-68.7, also in the Large Magellanic Cloud. This study found
+        evidence for the presence of a surviving companion star, which they identified as a red giant with
+        a mass of about 2.8 times that of the Sun. These studies provide strong evidence for the existence
+        of surviving companions in Type Ia supernova remnants, and suggest that the nature of the companion
+        star may vary depending on the specific circumstances of the supernova explosion. Further research
+        is needed to better understand the role of the companion star in the evolution of Type Ia
+        supernovae, and to determine the prevalence of surviving companions in these remnants.
+      </p>
 
-
-<p>
-Another study, published in the same journal in 2014, used the same observatory to observe the 
-Type Ia supernova remnant SNR 0509-68.7, also in the Large Magellanic Cloud. This study found 
-evidence for the presence of a surviving companion star, which they identified as a red giant with 
-a mass of about 2.8 times that of the Sun. These studies provide strong evidence for the existence 
-of surviving companions in Type Ia supernova remnants, and suggest that the nature of the companion 
-star may vary depending on the specific circumstances of the supernova explosion. Further research 
-is needed to better understand the role of the companion star in the evolution of Type Ia 
-supernovae, and to determine the prevalence of surviving companions in these remnants.
-</p>
-
-<div class="pagination">
-  
-    <a href="/blog/index.html">More blogs</a>
-    
-  
-</div>
-
-    </div>
-
-  </body>
+      <div class="pagination">
+        <a href="/blog/index.html">More blogs</a>
+      </div>
+    </article>
+  </main>
+</body>
 </html>

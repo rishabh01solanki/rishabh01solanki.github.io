@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced Stellar Modeling: Magnetohydrodynamic Simulations of White Dwarf Mergers — Rishabh Solanki">
+  <meta name="author" content="Rishabh Solanki">
+  <title>Rishabh &middot; Advanced Stellar Modeling</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
+
+  <!-- MathJax -->
+  <script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] } };</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
+
+  <script defer src="/javascript/cosmic.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-shell">
+    <a class="back-link" href="/#projects">All projects</a>
+    <h1 class="article-title">Advanced Stellar Modeling: Magnetohydrodynamic Simulations of White Dwarf Mergers</h1>
+    <p class="article-meta">Project &middot; Astrophysics &middot; HPC</p>
+
+    <article class="prose">
+      <div style="display: flex; flex-direction: column; align-items: center;">
+          <div style="display: flex; justify-content: space-between;">
+              <div>
+                  <img src="/assets/mhd.gif" alt="dens_slice_plt" style="width: 100%; height: auto;" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                  <img src="/assets/mhd_dens.jpeg" alt="dens_slice_plt" style="width: 100%; height: auto;" loading="lazy" decoding="async" />
+              </div>
+          </div>
+          <figcaption style="font-size:12px; text-align: center; margin-bottom: 20px;"><em>Evolution of a White dwarf merger. The simulation was done using the unsplit staggered mesh MHD solver in FLASH. The movie shows Beta (ratio of gas pressure to magnetic pressure) varying with time. The image is a density slice plot with a resolution of (256 &times; 256) cells at 1050 sec after the merger. </em></figcaption>
+      </div>
+
+      <h6>Project Overview</h6>
+      <p>This project involved the application of advanced computational techniques to simulate and analyze complex White Dwarf merger events. Utilizing the Magnetohydrodynamic (MHD) equations, the study extended the understanding of magnetized stellar interactions for precise astronomical modeling.</p>
+
+      <h6>MHD Formulation and Conservation Laws</h6>
+      <p>The simulation relies on the MHD equations, encompassing the conservation of mass, momentum, energy, and magnetic induction. These equations are expressed as:</p>
+
+      <div style="text-align: center;">
+        <div class="equation-container">
+        <p>\(\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0\) <span style="float: right;">(Conservation of Mass)</span></p>
+        <p>\(\frac{\partial \rho \mathbf{v}}{\partial t} + \nabla \cdot (\rho \mathbf{v} \mathbf{v} - \mathbf{B} \mathbf{B}) + \nabla p^* = 0\) <span style="float: right;">(Momentum Conservation)</span></p>
+        <p>\(\frac{\partial E}{\partial t} + \nabla \cdot [(E + p^*) \mathbf{v} - \mathbf{B}(\mathbf{v} \cdot \mathbf{B})] = 0\) <span style="float: right;">(Energy Conservation)</span></p>
+        <p>\(\frac{\partial \mathbf{B}}{\partial t} = \nabla \times (\mathbf{v} \times \mathbf{B})\) <span style="float: right;">(Magnetic Induction)</span></p>
+      </div>
+      </div>
+
+      <p>Here, \(\rho\) is the density, \(\mathbf{v}\) the velocity, \(\mathbf{B}\) the magnetic field, and \(p^*\) the total pressure including magnetic contributions.</p>
+
+      <h6>Simulation Methodology</h6>
+      <p>The simulations were conducted using the unsplit staggered mesh MHD solver in FLASH on the STAMPEDE 2 supercomputer. The project leveraged High-Performance Computing (HPC) for detailed analysis, facilitating comparison with traditional hydrodynamic models. This exploration enhances current astronomical understanding, offering novel insights into the intricate dynamics of stellar mergers.</p>
+
+      <p><a href="/assets/mhd.pdf">White Paper</a></p>
+      <p><a href="https://github.com/rishabh01solanki/flash4_fishergroup">View on GitHub</a></p>
+    </article>
+  </main>
+</body>
+</html>

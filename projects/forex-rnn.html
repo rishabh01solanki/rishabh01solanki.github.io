@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Forex Price Forecasting using Recurrent Neural Networks — Rishabh Solanki">
+  <meta name="author" content="Rishabh Solanki">
+  <title>Rishabh &middot; Forex Forecasting with RNNs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
+
+  <!-- MathJax -->
+  <script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] } };</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
+
+  <script defer src="/javascript/cosmic.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-shell">
+    <a class="back-link" href="/#projects">All projects</a>
+    <h1 class="article-title">Forex Price Forecasting: An Advanced Approach Using Recurrent Neural Networks (RNNs)</h1>
+    <p class="article-meta">Project &middot; Deep Learning &middot; Time Series</p>
+
+    <article class="prose">
+      <figure>
+        <img src="/assets/forex_euro_us.png" alt="Forex Price Forecast" style="width: 100%; height: auto;" loading="lazy" decoding="async"/>
+        <figcaption><em>Time-Series Prediction of Forex Prices using Recurrent Neural Networks, Showcasing Predictive Accuracy and Trend Insights.</em></figcaption>
+      </figure>
+
+      <h6>Introduction and Objective</h6>
+      <p>The goal of this project is to predict future foreign exchange rates using Recurrent Neural Networks (RNNs), a type of deep learning model well-suited for sequence prediction tasks.</p>
+
+      <h6>Modeling Strategy and Methodology</h6>
+      <p>The RNN architecture is designed to capture temporal dependencies in the data. The model is formulated as:</p>
+
+      <div class="equation-container">
+      \[
+      h_t = \sigma(W_{hh} h_{t-1} + W_{xh} x_t)
+      \]
+      \[
+      y_t = W_{hy} h_t
+      \]
+      </div>
+
+      <figure>
+        <img src="/assets/forex3d.png" alt="Forex Price Forecast" style="width: 100%; height: auto;" loading="lazy" decoding="async"/>
+        <figcaption><em>Time-Series Prediction of Forex Prices using Recurrent Neural Networks, Showcasing Predictive Accuracy and Trend Insights.</em></figcaption>
+      </figure>
+
+      <p>Here, \( h_t \) is the hidden state at time \( t \), \( x_t \) is the input at time \( t \), \( W \) represents weight matrices, and \( \sigma \) is the activation function.</p>
+      <p>Data preprocessing includes Min-Max scaling, expressed mathematically as:</p>
+      <div class="equation-container">
+      \[
+      x_{\text{scaled}} = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
+      \]
+      </div>
+
+      <h6>Results and Insights</h6>
+      <p>The model demonstrated robust performance in predicting forex price movements. The predicted and actual prices closely followed each other, validating the model's accuracy. The use of an interactive Plotly graph allowed for an in-depth analysis of model predictions.</p>
+
+      <p><a href="https://github.com/rishabh01solanki/Support-Vector-Regression">View on GitHub</a></p>
+    </article>
+  </main>
+</body>
+</html>

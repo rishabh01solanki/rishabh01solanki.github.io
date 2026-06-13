@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PixeLearner: Merging Vision with Voice Recognition — Rishabh Solanki">
+  <meta name="author" content="Rishabh Solanki">
+  <title>Rishabh &middot; PixeLearner</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
+
+  <script defer src="/javascript/cosmic.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-shell">
+    <a class="back-link" href="/#projects">All projects</a>
+    <h1 class="article-title">PixeLearner: Merging Vision with Voice Recognition</h1>
+    <p class="article-meta">Project &middot; Machine Learning &middot; iOS</p>
+
+    <article class="prose">
+      <p>
+          PixeLearner was conceptualized with the primary intention of seamlessly integrating vision-based machine learning with the intricacies of natural language processing. The objective was clear - create a tool that offers a natural way to recognize and label individuals, thereby enhancing personal interactions.
+      </p>
+
+      <figure>
+        <img src="/assets/pixel_map.png" alt="PixeLearner" style="width: 100%; height: auto;" loading="lazy" decoding="async"/>
+        <figcaption><em>Architecture showing how the app works.</em></figcaption>
+      </figure>
+
+      <h6>Objective</h6>
+      <p>
+          The primary aim of PixeLearner is to seamlessly emulate human interactions - to spot familiar faces and instantly recall associated names, just as one would during a friendly meetup.
+      </p>
+
+      <h6>Prime Use Cases</h6>
+      <ol>
+          <li>Identification of close acquaintances, colleagues, or family members from an ongoing camera feed.</li>
+          <li>Efficiently linking names to faces in an almost organic manner, fostering an environment of familiarity.</li>
+          <li>Real-time model enhancement with each new introduction, making it an evolving tool.</li>
+          <li>Associating faces with previously remembered data and contexts.</li>
+      </ol>
+
+      <h6>The Edge PixeLearner Offers</h6>
+      <ul>
+          <li>Guarantees user data sanctity with on-device processing.</li>
+          <li>Sets the stage for extensive adaptations in diverse application domains.</li>
+          <li>Immerses budding developers into a world of ML and NLP integration, offering a holistic learning curve.</li>
+      </ul>
+
+      <h6>Architectural Workflow of PixeLearner</h6>
+      <ul>
+          <li>Camera Integration: Leveraging the AV Foundation, the system offers continuous acquisition and refinement of live video streams. This ensures optimized resource allocation and preemptive measures against memory inefficiencies.</li>
+          <li>Model Analysis: Each frame is subjected to in-depth processing via our custom CNN model, specifically, the MobileNetV2 architecture. This strategy yields unique facial feature embeddings, essential for accurate recognition.</li>
+          <li>Audio-Text Transformation: A sophisticated functionality permits users to provide vocal labels. These audio inputs are subsequently transcribed into textual data through our advanced speech-to-text subsystem.</li>
+          <li>BERT&rsquo;s NLP Framework: The system subjects the textual data to BERT, an industry-leading NLP solution. BERT's capabilities ensure accurate tokenization and normalization of inputs. For complex tokens not inherent in BERT's lexicon, integration with Apple's NLTagger provides additional segmentation and classification.</li>
+          <li>Facial &amp; Linguistic Synchronization: The interplay between facial embeddings, derived from MobileNetV2, and labels processed via BERT ensures real-time associations between recognized faces and contextual labels.</li>
+          <li>Continuous Model Refinement: PixeLearner's hallmark is its adaptability. The model undergoes perpetual enhancement by assimilating new labels and recognitions, ensuring heightened accuracy over time.</li>
+      </ul>
+
+      <h6>More than just an app!</h6>
+      <p>
+          PixeLearner is more than just a project; it represents a step forward in how we interact with our environment. It's a testament to what can be achieved when vision and voice come together, and I'm excited about the path ahead. I am thinking to send the app for review. But before that there are a few minor things that need to polished. Thanks for reading and you can check the code on my github.
+      </p>
+
+      <p><a href="https://github.com/rishabh01solanki/PixeLearner">View this project on GitHub</a></p>
+    </article>
+  </main>
+</body>
+</html>

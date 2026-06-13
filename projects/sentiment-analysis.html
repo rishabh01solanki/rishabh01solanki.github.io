@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Advanced Sentiment Analysis on Movie Reviews using NLP and TF-IDF Vectorization — Rishabh Solanki">
+  <meta name="author" content="Rishabh Solanki">
+  <title>Rishabh &middot; Sentiment Analysis</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
+
+  <!-- MathJax -->
+  <script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] } };</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
+
+  <script defer src="/javascript/cosmic.js"></script>
+</head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
+
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#writing">Writing</a></li>
+      <li><a href="/canvas/canvas.html">Canvas</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="article-shell">
+    <a class="back-link" href="/#projects">All projects</a>
+    <h1 class="article-title">Advanced Sentiment Analysis on Movie Reviews: A Sophisticated Approach Using NLP and TF-IDF Vectorization</h1>
+    <p class="article-meta">Project &middot; NLP &middot; Machine Learning</p>
+
+    <article class="prose">
+      <h6>Project Overview</h6>
+      <p>This project represents an intersection of state-of-the-art NLP techniques, statistical modeling, and advanced machine learning algorithms. Through meticulous design and implementation, a high-performance model was created to accurately classify movie reviews based on sentiment.</p>
+
+      <h6>Data Collection and Ingestion</h6>
+      <p>Data was sourced from the NLTK movie_reviews corpus and ingested through a comprehensive ETL pipeline using AWS Glue and Lambda functions, reflecting an efficient and scalable architecture.</p>
+
+      <h6>Preprocessing and Feature Engineering</h6>
+      <p>Data preprocessing involved several complex steps, optimized for performance and accuracy:</p>
+      <ul>
+          <li><b>Tokenization</b>: Used advanced algorithms to tokenize text, preserving semantics.</li>
+          <li><b>Stopword Removal</b>: Applied entropy-based measures to selectively remove non-contributive words.</li>
+          <li><b>Stemming</b>: Employed Lancaster stemming algorithm, optimized for the specific corpus.</li>
+          <li><b>Vectorization</b>: Transformed text into numerical vectors using TF-IDF, represented by:
+             <div class="equation-container">
+                \[
+                  \text{TF-IDF} = \text{TF} \times \left(1 + \log\left(\frac{N}{1 + \text{DF}}\right)\right)
+                \]
+            </div>
+          </li>
+      </ul>
+
+      <h6>Model Architecture and Development</h6>
+      <p>Engineered a composite model combining Logistic Regression, Random Forest, Naive Bayes, and SVM with ensemble learning techniques. Utilized stochastic gradient descent for optimization, with a custom loss function defined by:</p>
+
+      <div class="equation-container">
+      \[
+      \mathcal{L}(\theta) = -\sum y \log(\hat{y}) + (1-y)\log(1-\hat{y}) + \lambda\|\theta\|_2^2
+      \]
+      </div>
+
+      <h6>Training, Hyperparameter Tuning, and Evaluation</h6>
+      <p>Implemented a robust training regimen with cross-validation and GridSearch for hyperparameter tuning. The models were evaluated using precision, recall, F1-score, and ROC-AUC metric, ensuring a well-balanced classification performance.</p>
+
+      <h6>Results, Insights, and Future Direction</h6>
+      <p>The SVM model achieved excellence with the highest ROC_AUC score. Insights drawn from this project are vital for areas like targeted marketing and user experience enhancement. Future directions involve integrating deep learning algorithms and experimenting with alternative vectorization strategies.</p>
+
+      <figure>
+        <img src="/assets/roc.png" alt="ROC Curve" style="width: 100%; height: auto;" loading="lazy" decoding="async" />
+        <figcaption><em>ROC curve for the models, illustrating an adept understanding of classification performance.</em></figcaption>
+      </figure>
+
+      <figure>
+        <img src="/assets/cfmtx.png" alt="Confusion matrix" style="width: 100%; height: auto;" loading="lazy" decoding="async" />
+        <figcaption><em>Confusion matrix for different models, emphasizing precision, recall, and interpretability.</em></figcaption>
+      </figure>
+
+      <p><a href="https://github.com/rishabh01solanki/TF-IDF">View this project on GitHub</a></p>
+    </article>
+  </main>
+</body>
+</html>
