@@ -1,230 +1,163 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-
-  <head>
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <meta name="description" content="Homepage of Rishabh Solanki">
-  <meta name="keywords" content="Rishabh, Solanki, Data Science, Machine learning, Physics">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inside the mind of a Deep Neural Network — Rishabh Solanki">
   <meta name="author" content="Rishabh Solanki">
-  
-  <title>
-    
-      Blog &middot; Rishabh
-    
-  </title>
+  <title>Rishabh &middot; Inside the mind of a Neural Network</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/hyde.css">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/public/css/cosmic.css">
+  <link rel="shortcut icon" href="/public/favicon.ico">
 
-  <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
-                                 <link rel="shortcut icon" href="/public/favicon.ico">
-
-  <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HBVJGEV8DR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HBVJGEV8DR');
+  </script>
 
   <!-- MathJax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    messageStyle: "none",
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async
-          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
-  </script>
+  <script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']] } };</script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-chtml.js" integrity="sha384-AHAnt9ZhGeHIrydA1Kp1L7FN+2UosbF7RQg6C+9Is/a7kDpQ1684C2iH2VWil6r4" crossorigin="anonymous"></script>
 
+  <script defer src="/javascript/cosmic.js"></script>
 </head>
+<body>
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="nebula" aria-hidden="true"></div>
 
-
-  <body>
-
-    <div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>Rishabh</h1>
-      <p class="lead">Stars and Stories</p>
-    </div>
-
-    <ul class="sidebar-nav">
-      <li class="sidebar-nav-item">
-        <a href="/">Home</a>
-      </li>
-
-      <li class="sidebar-nav-item">
-        <a href="/research/">Projects</a>
-     </li>
-        
-  
-       <li class="sidebar-nav-item">
-          <a href="/computing/">Computing</a>
-       </li>
-
-
-          
-       <li class="sidebar-nav-item">
-        <a href="/cv/">Resume</a>
-       </li>
-
-       <li class="sidebar-nav-item active">
-        <a href="/blog/">Blog</a>
-      </li>
-
-
-       <li class="sidebar-nav-item">
-          <a href="/teaching/">Teaching</a>
-       </li>
-          
-       <li class="sidebar-nav-item">
-        <a href="/About me/">About Me</a>
-     </li>
-          
-   
+  <nav class="site-nav">
+    <a class="nav-brand" href="/#top">Rishabh<span class="star">&nbsp;&#10022;</span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#projects">Projects</a></li>
+      <li><a href="/#experience">Experience</a></li>
+      <li><a href="/#teaching">Teaching</a></li>
+      <li><a href="/#contact">Contact</a></li>
     </ul>
+  </nav>
 
-    <p><br>
-      &copy; 2023. All rights reserved.
-    </p>
-  </div>
-</div>
+  <main class="article-shell">
+    <a class="back-link" href="/blog/index.html">All writing</a>
+    <h1 class="article-title">Inside the mind of a Deep Neural Network</h1>
+    <p class="article-meta">June 28, 2022</p>
 
-<div class="content container">
-    <div class="page">
-<h2 class="page-title">Inside the mind of a Deep Neural Network</h2>
-<span class="post-date">June 28, 2022</span>
+    <article class="prose">
+      <p>The mind of a neural network can be a complex and mysterious thing, but at its core, it is
+        simply a set of algorithms designed to process and analyze large amounts of data. This data is
+        typically fed into the neural network in the form of input vectors, which are then processed
+        through a series of interconnected nodes, or neurons. Each neuron performs a simple mathematical
+        operation on the data it receives, and the output of these operations is then passed on to the
+        next layer of neurons in the network.
+      </p>
 
-
-<p>The mind of a neural network can be a complex and mysterious thing, but at its core, it is 
-  simply a set of algorithms designed to process and analyze large amounts of data. This data is 
-  typically fed into the neural network in the form of input vectors, which are then processed 
-  through a series of interconnected nodes, or neurons. Each neuron performs a simple mathematical 
-  operation on the data it receives, and the output of these operations is then passed on to the 
-  next layer of neurons in the network.
-</p>
-
-
-<div style="display: flex; flex-direction: column; align-items: center;">
-  <div style="display: flex; justify-content: space-between;">
-      <div>
-          <img src="/assets/two.png" alt="Number Two" style ="width: 420px; height: auto;"/>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div style="display: flex; justify-content: space-between;">
+            <div>
+                <img src="/assets/two.png" alt="Number Two" style="width: 420px; height: auto;" loading="lazy" decoding="async"/>
+            </div>
+            <div>
+                <img src="/assets/nine.png" alt="Number Nine" style="width: 420px; height: auto;" loading="lazy" decoding="async"/>
+            </div>
+        </div>
+        <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>The numbers '2' and '9' and how a Deep Neural Network thinks
+        they should look like.
+        </em></figcaption>
       </div>
-      <div>
-          <img src="/assets/nine.png" alt="Number Nine" style ="width: 420px; height: auto;"/>
+
+      <p>
+        One key aspect of a neural network's "mind" is its ability to learn from the data it is given.
+        This is accomplished through a process called training, in which the neural network is fed a
+        large amount of labeled data and then uses that data to adjust the weights of its neurons in
+        order to improve its performance. Over time, this process allows the neural network to make
+        increasingly accurate predictions or classifications based on the data it has been trained on.
+      </p>
+
+      <p>
+        Another interesting aspect of a neural network's mind is its ability to generalize from the data
+        it has been trained on. This means that even if a neural network has only been trained on a
+        limited amount of data, it can still make accurate predictions on new, unseen data. This is
+        because a well-trained neural network has learned the underlying patterns and structures in
+        the data, rather than simply memorizing the specific examples it has been trained on.
+      </p>
+
+      <p>
+        However, it is important to note that the mind of a neural network is ultimately limited by
+        the quality and quantity of the data it has been trained on. If a neural network is trained
+        on biased or incomplete data, it will be unable to make accurate predictions on new, unseen
+        data. This has important implications for the use of neural networks in real-world applications,
+        as it highlights the need for careful consideration of the data used for training.
+      </p>
+
+      <p>
+        There are several types of Neural Networks. Deep Neural Network (DNN) is a multi layer network that roughly works the same way as a
+        human brain. It has neurons, activators, links and weights. There is an input node layer, a hidden
+        node layer and and an output node layer. All these are connected via some links and these links
+        have weights attached to them. The link weights can be updated by training the model which can be
+        done in two ways, supervised learning and unsupervised learning. The former is more simple and more
+        reliable as it is based on teaching a model what exactly are they operating on. It is just like
+        a toddler who is interacting with the environment and the parents are constantly teaching the kid
+        how to interact and interpret. If you want to learn more about neural networks and machine learning,
+        I would suggest going though this fantastic book <em>"Make Your Own Neural Network" by Tariq Rashid.</em>
+      </p>
+
+      <h3>
+          Neural Network for recognising numbers
+      </h3>
+
+      <p>
+          I made this basic model using <a href="https://pjreddie.com/projects/mnist-in-csv/">MNIST dataset. </a>
+          A picture of a handwritten number is composed of pixels (28x28). These pixels have some values
+          associated with them. For simplicity, a greyed out picture is taken in which each pixel value is
+          between 0 (Black) to 255 (white). These are then stored in a .csv file, and this is the MNSIT data that we interact with.
+      </p>
+
+      <p>
+          We can easily use this data set to train our neural network. You can find the code
+          <a href="https://github.com/rishabh01solanki/ML_numbers">here</a>. Once the network is trained,
+          we can test it by comparing against a new input image. You will be surprised how good the network performs.
+      </p>
+
+      <h3>
+          Backquerry, "Probing the mind of Neural Net"
+      </h3>
+
+      <p>
+          Once the network is trained meaning, its links weights are set, we can backquerry the network.
+          We can input our querry at the output nodes and see what result it generates at the input layer.
+          The images of '2' and '9' as shown were obtained in this fashion. This is what a neural
+          network thinks how a '0' and a '7' look like.
+      </p>
+
+      <div class="row">
+        <div class="column">
+          <img src="/assets/zero.png" alt="Number Two" style="width: 420px; height: auto;" loading="lazy" decoding="async"/>
+        </div>
+        <div class="column">
+          <img src="/assets/seven.png" alt="Number Nine" style="width: 420px; height: auto;" loading="lazy" decoding="async"/>
+        </div>
       </div>
-  </div>
-  <figcaption style="font-size:13px; text-align: center; margin-bottom: 20px;"><em>The numbers '2' and '9' and how a Deep Neural Network thinks
-  they should look like.
-  </em></figcaption>
-</div>
 
+      <p>
+        Next, I trained the model using some of my pictures and this is how it thinks how i look. Not bad for
+        a machine to think like this.
+      </p>
 
-<p>  </p>
+      <p>
+        <img src="/assets/rishu_ml.png" alt="Rishabh" style="width: 350px; height: auto;" loading="lazy" decoding="async"/>
+      </p>
 
-<p>
-  One key aspect of a neural network's "mind" is its ability to learn from the data it is given. 
-  This is accomplished through a process called training, in which the neural network is fed a 
-  large amount of labeled data and then uses that data to adjust the weights of its neurons in 
-  order to improve its performance. Over time, this process allows the neural network to make 
-  increasingly accurate predictions or classifications based on the data it has been trained on.
-</p>
-
-<p>
-  Another interesting aspect of a neural network's mind is its ability to generalize from the data 
-  it has been trained on. This means that even if a neural network has only been trained on a 
-  limited amount of data, it can still make accurate predictions on new, unseen data. This is 
-  because a well-trained neural network has learned the underlying patterns and structures in 
-  the data, rather than simply memorizing the specific examples it has been trained on.
-</p>
-
-<p>
-  However, it is important to note that the mind of a neural network is ultimately limited by 
-  the quality and quantity of the data it has been trained on. If a neural network is trained 
-  on biased or incomplete data, it will be unable to make accurate predictions on new, unseen 
-  data. This has important implications for the use of neural networks in real-world applications, 
-  as it highlights the need for careful consideration of the data used for training.
-</p>
-
-
-<p> 
-  There are several types of Neural Networks. Deep Neural Network (DNN) is a multi layer network that roughly works the same way as a 
-  human brain. It has neurons, activators, links and weights. There is an input node layer, a hidden 
-  node layer and and an output node layer. All these are connected via some links and these links 
-  have weights attached to them. The link weights can be updated by training the model which can be 
-  done in two ways, supervised learning and unsupervised learning. The former is more simple and more
-  reliable as it is based on teaching a model what exactly are they operating on. It is just like
-  a toddler who is interacting with the environment and the parents are constantly teaching the kid
-  how to interact and interpret. If you want to learn more about neural networks and machine learning,
-  I would suggest going though this fantastic book <em>"Make Your Own Neural Network" by Tariq Rashid.</em>
-</p>
-
-<h3>
-    Neural Network for recognising numbers
-</h3>
-
-<p>
-    I made this basic model using <a href="https://pjreddie.com/projects/mnist-in-csv/">MNIST dataset. </a> 
-    A picture of a handwritten number is composed of pixels (28x28). These pixels have some values
-    associated with them. For simplicity, a greyed out picture is taken in which each pixel value is 
-    between 0 (Black) to 255 (white). These are then stored in a .csv file, and this is the MNSIT data that we interact with.
-</p>
-
-<p>
-    We can easily use this data set to train our neural network. You can find the code 
-    <a href="https://github.com/rishabh01solanki/ML_numbers">here</a>. Once the network is trained,
-    we can test it by comparing against a new input image. You will be surprised how good the network performs.
-</p>
-
-<h3>
-    Backquerry, "Probing the mind of Neural Net"
-</h3>
-
-<p>
-    Once the network is trained meaning, its links weights are set, we can backquerry the network. 
-    We can input our querry at the output nodes and see what result it generates at the input layer.
-    The images of '2' and '9' as shown were obtained in this fashion. This is what a neural 
-    network thinks how a '0' and a '7' look like.
-</p>
-
-<div class="row">
-  <div class="column">
-    <img src="/assets/zero.png" alt="Number Two" style ="width: 420px; height: auto;"/>
-  </div>
-  <div class="column">
-    <img src="/assets/seven.png" alt="Number Nine" style ="width: 420px; height: auto;"/>
-  </div>
-</div>
-
-<p>
-  Next, I trained the model using some of my pictures and this is how it thinks how i look. Not bad for 
-  a machine to think like this.
-</p>
-
-<p>
-  <img src="/assets/rishu_ml.png" alt="Rishabh" style ="width: 350px; height: auto; "/>
-</p>
-
-
-
-
-
-<div class="pagination">
-  
-    <a href="/blog/index.html">More blogs</a>
-    
-  
-</div>
-  
-</div>
-
-
-    </div>
-
-  </body>
+      <div class="pagination">
+        <a href="/blog/index.html">More blogs</a>
+      </div>
+    </article>
+  </main>
+</body>
 </html>
